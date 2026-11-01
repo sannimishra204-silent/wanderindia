@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Explore detailed travel guides, itineraries, famous places, food, and travel tips across India with WanderIndia."
+  >
+  <meta name="theme-color" content="#102338">
+  <title id="page-title">Destination Guide — WanderIndia</title>
+
+  <!-- Elegant heading and body fonts from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="destination.css">
+  <script src="destination.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Shared Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="safety.html">Safety Center</a>
+        <a class="nav-cta" href="index.html#destination-search">
+          Find a destination
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- State 1: Loading State -->
+    <div class="state-container" id="destination-loading" aria-live="polite">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p class="state-text">Loading destination details...</p>
+    </div>
+
+    <!-- State 2: Missing or Unknown Destination State -->
+    <section class="state-container" id="destination-error" hidden style="display: none;" aria-labelledby="state-title">
+      <div class="container error-panel">
+        <p class="eyebrow" id="state-eyebrow">Notice</p>
+        <h1 id="state-title" class="state-heading">Destination Not Found</h1>
+        <p id="state-message" class="state-description">
+          We could not find the destination you requested. Please explore one of our popular Indian destinations below.
+        </p>
+
+        <a class="button button-dark" href="index.html#destinations">
+          ← Return to all destinations
+        </a>
+
+        <div class="available-destinations-section">
+          <h2>Popular Destinations to Explore</h2>
+          <div class="available-grid" id="available-destinations-grid">
+            <!-- Populated safely via JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- State 3: Active Destination Content -->
+    <article class="destination-detail" id="destination-content" hidden style="display: none;">
+      <!-- Hero Banner -->
+      <section class="detail-hero" aria-labelledby="detail-title">
+        <div class="detail-hero-media">
+          <img
+            id="detail-hero-image"
+            class="detail-hero-img"
+            src=""
+            alt=""
+            loading="eager"
+          >
+          <div class="detail-hero-overlay"></div>
+        </div>
+
+        <div class="container detail-hero-content">
+          <div class="detail-top-nav">
+            <a class="back-link" href="index.html#destinations">
+              <span aria-hidden="true">←</span> Back to all destinations
+            </a>
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="index.html#home">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li aria-hidden="true">/</li>
+                <li id="breadcrumb-current" aria-current="page">Destination</li>
+              </ol>
+            </nav>
+          </div>
+
+          <div class="detail-hero-badges">
+            <span class="detail-pill detail-pill-category" id="detail-category-badge">Category</span>
+            <span class="detail-pill detail-pill-region" id="detail-region-badge">Region</span>
+          </div>
+
+          <h1 id="detail-title" class="detail-hero-title">Destination Name</h1>
+          <p id="detail-tagline" class="detail-hero-tagline">Destination tagline goes here.</p>
+        </div>
+      </section>
+
+      <!-- Quick Facts Bar -->
+      <section class="quick-facts-section" aria-label="Quick destination summary">
+        <div class="container">
+          <div class="quick-facts-bar">
+            <div class="fact-item">
+              <span class="fact-icon" aria-hidden="true">🗓️</span>
+              <div>
+                <p class="fact-label">Best time to visit</p>
+                <p class="fact-value" id="quick-best-time">—</p>
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <span class="fact-icon" aria-hidden="true">⏱️</span>
+              <div>
+                <p class="fact-label">Ideal duration</p>
+                <p class="fact-value" id="quick-duration">—</p>
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <span class="fact-icon" aria-hidden="true">₹</span>
+              <div>
+                <p class="fact-label">Estimated budget <span class="estimate-pill">Est.</span></p>
+                <p class="fact-value" id="quick-budget">—</p>
+              </div>
+            </div>
+
+            <div class="fact-item fact-action">
+              <a
+                id="quick-map-button"
+                class="button button-map"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>View on Map</span>
+                <span class="map-external-icon" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview Section -->
+      <section class="section-space overview-section" aria-labelledby="overview-title">
+        <div class="container">
+          <div class="overview-grid">
+            <div class="overview-main">
+              <p class="eyebrow">Discover the Place</p>
+              <h2 id="overview-title">About this destination</h2>
+              <p class="overview-lead" id="overview-description">—</p>
+            </div>
+
+            <div class="overview-sidebar">
+              <div class="sidebar-card">
+                <h3>Travel Highlights</h3>
+                <div class="sidebar-info-row">
+                  <span class="sidebar-info-title">Region</span>
+                  <span class="sidebar-info-value" id="sidebar-region">—</span>
+                </div>
+                <div class="sidebar-info-row">
+                  <span class="sidebar-info-title">Experience type</span>
+                  <span class="sidebar-info-value" id="sidebar-category">—</span>
+                </div>
+                <div class="sidebar-info-row">
+                  <span class="sidebar-info-title">Weather note</span>
+                  <span class="sidebar-info-value" id="sidebar-weather">—</span>
+                </div>
+                <a
+                  id="sidebar-directions-link"
+                  class="button button-outline-dark"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Directions on Google Maps ↗
+                </a>
+                <a
+                  id="sidebar-safety-link"
+                  class="button button-outline-dark button-safety-link"
+                  href="safety.html"
+                >
+                  🛡️ Destination Safety &amp; Medical Guide ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Famous Places to Visit -->
+      <section class="section-space places-section" aria-labelledby="places-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Iconic Sights</p>
+              <h2 id="places-title">Famous places to visit</h2>
+            </div>
+            <p class="section-description">
+              Landmarks, viewpoints, and cultural treasures you shouldn't miss.
+            </p>
+          </div>
+
+          <div class="places-grid" id="famous-places-grid">
+            <!-- Injected safely via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Activities & Experiences -->
+      <section class="section-space activities-section" aria-labelledby="activities-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Things To Do</p>
+              <h2 id="activities-title">Activities &amp; experiences</h2>
+            </div>
+            <p class="section-description">
+              Unforgettable adventures and local ways to spend your days.
+            </p>
+          </div>
+
+          <div class="activities-grid" id="activities-grid">
+            <!-- Injected safely via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Suggested Itinerary -->
+      <section class="section-space itinerary-section" aria-labelledby="itinerary-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Plan Your Trip</p>
+              <h2 id="itinerary-title">Suggested travel itinerary</h2>
+            </div>
+            <p class="section-description">
+              A balanced, flexible day-by-day plan crafted for curiosity and ease.
+            </p>
+          </div>
+
+          <div class="itinerary-timeline" id="itinerary-timeline">
+            <!-- Injected safely via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Local Food Recommendations -->
+      <section class="section-space food-section" aria-labelledby="food-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Flavors of the Region</p>
+              <h2 id="food-title">Local food recommendations</h2>
+            </div>
+            <p class="section-description">
+              Authentic regional dishes, desserts, and drinks worth tasting.
+            </p>
+          </div>
+
+          <div class="food-grid" id="food-grid">
+            <!-- Injected safely via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Budget & Travel Tips (Side by side on desktop) -->
+      <section class="section-space budget-tips-section" aria-labelledby="budget-tips-heading">
+        <div class="container">
+          <h2 id="budget-tips-heading" class="visually-hidden">Practical Travel Essentials and Budget</h2>
+          <div class="two-column-split">
+            <!-- Budget Breakdown -->
+            <div class="column-card budget-card">
+              <div class="card-header">
+                <p class="eyebrow">Trip Costs</p>
+                <h3>Estimated travel budget</h3>
+                <p class="subtle-note">
+                  Approximate daily spending estimates in Indian Rupees (₹) per person.
+                </p>
+              </div>
+
+              <div class="budget-tiers" id="budget-tiers">
+                <!-- Injected safely via JS -->
+              </div>
+
+              <div class="budget-disclaimer">
+                <p>
+                  <strong>Disclaimer:</strong> All budgets are estimates only. Actual costs fluctuate based on season, advance booking, transit preferences, and individual lifestyle choices.
+                </p>
+              </div>
+            </div>
+
+            <!-- Practical Tips -->
+            <div class="column-card tips-card">
+              <div class="card-header">
+                <p class="eyebrow">Good To Know</p>
+                <h3>Practical travel tips</h3>
+                <p class="subtle-note">
+                  Essential advice on packing, transit, etiquette, and safety.
+                </p>
+              </div>
+
+              <ul class="tips-list" id="tips-list">
+                <!-- Injected safely via JS -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Destinations -->
+      <section class="section-space related-section" aria-labelledby="related-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Continue Exploring</p>
+              <h2 id="related-title">You might also love</h2>
+            </div>
+            <p class="section-description">
+              Other handpicked journeys that pair well with this trip.
+            </p>
+          </div>
+
+          <div class="destination-grid" id="related-destinations-grid">
+            <!-- Injected safely via JS -->
+          </div>
+
+          <div class="detail-bottom-cta">
+            <a class="button button-dark" href="index.html#destinations">
+              ← Explore all destinations on WanderIndia
+            </a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+      <p>Made for the curious. © <span id="current-year"></span> WanderIndia.</p>
+      <a class="back-to-top" href="#main-content">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

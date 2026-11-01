@@ -1,0 +1,1137 @@
+/* ==========================================================================
+   WanderIndia — Travel Safety Center Stylesheet
+   Design System: Authoritative, Calm, Trustworthy, Mobile-First
+   Inherits design tokens and base typography from style.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Accessibility & Strict Display Enforcement
+   -------------------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* High-contrast focus visible ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: var(--radius-small);
+}
+
+/* --------------------------------------------------------------------------
+   1. Safety Center Hero Section
+   -------------------------------------------------------------------------- */
+.safety-hero {
+  position: relative;
+  padding-block: clamp(60px, 9vw, 96px);
+  color: var(--color-white);
+  background: linear-gradient(180deg, var(--color-navy-deep) 0%, var(--color-navy) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.safety-hero-inner {
+  max-width: 860px;
+}
+
+.safety-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  color: #fbd38d;
+  background: rgba(251, 211, 141, 0.12);
+  border: 1px solid rgba(251, 211, 141, 0.3);
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.safety-hero-badge .badge-dot {
+  width: 7px;
+  height: 7px;
+  background: #fbd38d;
+  border-radius: 50%;
+}
+
+.safety-hero-title {
+  margin: 0 0 18px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  line-height: 1.1;
+}
+
+.safety-hero-title span {
+  color: var(--color-orange);
+}
+
+.safety-hero-lead {
+  margin: 0 0 32px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.68;
+}
+
+.emergency-disclaimer-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(10, 25, 41, 0.85);
+  border-left: 4px solid var(--color-orange);
+  border-radius: var(--radius-small);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.disclaimer-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Emergency Quick-Dial Grid (Above the Fold)
+   -------------------------------------------------------------------------- */
+.emergency-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.emergency-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.emergency-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px -10px rgba(16, 35, 56, 0.12);
+}
+
+/* Card 1 Specific: Emergency Response 112 */
+.card-emergency-112 {
+  border-top: 5px solid #c53030;
+}
+
+/* Card 2 Specific: Tourist Infoline 1363 */
+.card-tourist-1363 {
+  border-top: 5px solid var(--color-orange);
+}
+
+.emergency-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.emergency-type-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.type-critical {
+  color: #9b2c2c;
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+}
+
+.type-guidance {
+  color: #9c4221;
+  background: #fffaf0;
+  border: 1px solid #fbd38d;
+}
+
+.emergency-hours {
+  font-size: 11.5px;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.emergency-card-title {
+  margin: 0 0 6px;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.emergency-card-subtitle {
+  margin: 0 0 14px;
+  color: #4a5568;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.emergency-card-desc {
+  margin: 0 0 24px;
+  color: #55626f;
+  font-size: 14px;
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+/* Dial Button Group */
+.dial-action-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dial-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.dial-btn-emergency {
+  color: var(--color-white);
+  background: #c53030;
+  box-shadow: 0 4px 16px rgba(197, 48, 48, 0.35);
+}
+
+.dial-btn-emergency:hover {
+  background: #9b2c2c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 48, 48, 0.45);
+}
+
+.dial-btn-tourist {
+  color: var(--color-white);
+  background: var(--color-navy);
+  box-shadow: 0 4px 16px rgba(16, 35, 56, 0.2);
+}
+
+.dial-btn-tourist:hover {
+  background: var(--color-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 113, 57, 0.35);
+}
+
+.dial-btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 18px;
+  color: var(--color-navy);
+  background: var(--color-paper);
+  border: 1.5px solid var(--color-line);
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.dial-btn-secondary:hover {
+  color: var(--color-orange-dark);
+  border-color: var(--color-orange);
+}
+
+.emergency-card-meta {
+  padding-top: 14px;
+  border-top: 1px solid var(--color-line);
+  font-size: 11.5px;
+  color: var(--color-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.emergency-card-meta a {
+  color: var(--color-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.emergency-card-meta a:hover {
+  color: var(--color-orange-dark);
+}
+
+/* --------------------------------------------------------------------------
+   3. Destination Safety Dossiers
+   -------------------------------------------------------------------------- */
+.dossier-controls {
+  margin-bottom: 28px;
+}
+
+.dossier-tabs-label {
+  margin-bottom: 10px;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.dossier-tab-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dossier-tab-btn {
+  padding: 10px 20px;
+  color: var(--color-navy);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-line);
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.dossier-tab-btn:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange-dark);
+  transform: translateY(-1px);
+}
+
+.dossier-tab-btn.active {
+  color: var(--color-white);
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  box-shadow: 0 4px 14px rgba(16, 35, 56, 0.15);
+}
+
+.param-notice-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  margin-bottom: 24px;
+  color: #744210;
+  background: #fffff0;
+  border: 1px solid #fefcbf;
+  border-left: 4px solid #d69e2e;
+  border-radius: var(--radius-small);
+  font-size: 13.5px;
+}
+
+.dossier-card {
+  padding: clamp(28px, 4vw, 42px);
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+}
+
+.dossier-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: 28px;
+}
+
+.dossier-title-area h3 {
+  margin: 0 0 6px;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 700;
+}
+
+.dossier-title-area p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.dossier-header-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dossier-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.dossier-badge-tag {
+  color: #7b341e;
+  background: #feebc8;
+}
+
+.dossier-badge-board {
+  color: var(--color-navy);
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+}
+
+/* Civic Contacts Bar */
+.dossier-contacts-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  background: #fbf9f4;
+  border: 1px solid #ebe5d8;
+  border-radius: var(--radius-medium);
+}
+
+.dossier-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-size: 11px;
+  color: var(--color-muted);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.contact-name {
+  color: var(--color-navy);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.contact-detail {
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.contact-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 3px;
+  color: var(--color-orange-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Guidance Grid */
+.dossier-guidance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.guidance-card {
+  padding: 22px 20px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-medium);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.guidance-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(237, 139, 82, 0.4);
+}
+
+.guidance-category-tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--color-orange-dark);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.guidance-card h4 {
+  margin: 0 0 8px;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.guidance-card p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   4. Medical Assistance Section
+   -------------------------------------------------------------------------- */
+.medical-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.medical-info-card {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 22px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  box-shadow: 0 4px 16px rgba(16, 35, 56, 0.03);
+}
+
+.medical-info-card .card-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.medical-info-card h3 {
+  margin: 0 0 8px;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.medical-info-card p {
+  margin: 0 0 16px;
+  color: #55626f;
+  font-size: 14px;
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 10px;
+  background: #ebf8ff;
+  color: #2b6cb0;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.destination-hospital-card {
+  padding: 28px 26px;
+  margin-bottom: 32px;
+  background: var(--color-white);
+  border: 1.5px solid #cbd5e0;
+  border-left: 5px solid var(--color-navy);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-soft);
+}
+
+.hospital-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hospital-card-header h3 {
+  margin: 0;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hospital-status-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #22543d;
+  background: #c6f6d5;
+}
+
+.hospital-details {
+  color: #4a5568;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.hospital-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button-hospital-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  color: var(--color-white);
+  background: var(--color-navy);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.button-hospital-call:hover {
+  background: var(--color-orange-dark);
+}
+
+.button-hospital-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  color: var(--color-navy);
+  background: transparent;
+  border: 1.5px solid var(--color-navy);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.button-hospital-map:hover {
+  color: var(--color-white);
+  background: var(--color-navy);
+}
+
+.hospital-map-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 30px;
+  background: #f7fafc;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  margin-bottom: 24px;
+}
+
+.hospital-map-cta h3 {
+  margin: 0 0 6px;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.hospital-map-cta p {
+  margin: 0;
+  color: #55626f;
+  font-size: 14px;
+}
+
+.button-map-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  color: var(--color-white);
+  background: var(--color-navy);
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(16, 35, 56, 0.15);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.button-map-search:hover {
+  background: var(--color-orange-dark);
+  transform: translateY(-2px);
+}
+
+.medical-disclaimer-box {
+  padding: 14px 18px;
+  background: #fffaf0;
+  border-left: 3.5px solid #dd6b20;
+  border-radius: var(--radius-small);
+}
+
+.medical-disclaimer-box p {
+  margin: 0;
+  color: #7b341e;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   5. Official Advisories & Weather Guidance
+   -------------------------------------------------------------------------- */
+.advisories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.advisory-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-fast);
+}
+
+.advisory-card:hover {
+  transform: translateY(-2px);
+}
+
+.advisory-status-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 9px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #2c5282;
+  background: #ebf8ff;
+  border: 1px solid #bee3f8;
+}
+
+.advisory-card h3 {
+  margin: 0 0 8px;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.advisory-authority {
+  margin: 0 0 12px;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.advisory-focus {
+  margin: 0 0 16px;
+  color: #4a5568;
+  font-size: 14px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.advisory-guidance-note {
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  background: #f7fafc;
+  border-left: 3px solid #cbd5e0;
+  border-radius: 4px;
+  color: #4a5568;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.advisory-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-orange-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.advisory-link:hover {
+  color: var(--color-navy);
+}
+
+/* --------------------------------------------------------------------------
+   6. Interactive Travel Safety Checklist
+   -------------------------------------------------------------------------- */
+.checklist-card {
+  padding: clamp(28px, 4vw, 42px);
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+}
+
+.checklist-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.progress-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-label {
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.progress-text {
+  color: var(--color-navy);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.button-text-danger {
+  padding: 6px 12px;
+  color: #c53030;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.button-text-danger:hover {
+  background: #fff5f5;
+  border-color: #feb2b2;
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #ede8df;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-orange) 0%, var(--color-orange-dark) 100%);
+  border-radius: 999px;
+  transition: width 300ms ease;
+}
+
+.storage-blocked-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  color: #744210;
+  background: #fffff0;
+  border: 1px solid #fefcbf;
+  border-radius: var(--radius-small);
+  font-size: 12.5px;
+}
+
+.checklist-group {
+  margin-bottom: 30px;
+}
+
+.checklist-group:last-child {
+  margin-bottom: 0;
+}
+
+.checklist-group-title {
+  margin: 0 0 6px;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.checklist-group-desc {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.checklist-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.checklist-item-row:hover {
+  background: #faf8f3;
+  border-color: rgba(237, 139, 82, 0.4);
+}
+
+.checklist-item-row.completed {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.checklist-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--color-navy);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checklist-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+}
+
+.checklist-item-title {
+  color: var(--color-navy);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.checklist-item-row.completed .checklist-item-title {
+  color: #4a5568;
+}
+
+.checklist-item-detail {
+  color: #55626f;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   7. Sources & Transparency Registry Table
+   -------------------------------------------------------------------------- */
+.sources-table-container {
+  overflow-x: auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+}
+
+.sources-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.sources-table th,
+.sources-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.sources-table th {
+  color: var(--color-navy);
+  background: #fbfaf7;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.sources-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sources-table td a {
+  color: var(--color-orange-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-verified {
+  color: #22543d;
+  background: #c6f6d5;
+}
+
+.status-official {
+  color: #2b6cb0;
+  background: #bee3f8;
+}
+
+.table-text-muted {
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive Layout Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .emergency-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dossier-contacts-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .hospital-map-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-map-search {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .safety-hero {
+    padding-block: 48px;
+  }
+
+  .emergency-card {
+    padding: 24px 20px;
+  }
+
+  .dial-btn {
+    font-size: 15.5px;
+  }
+
+  .dossier-card {
+    padding: 22px 18px;
+  }
+
+  .dossier-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dossier-guidance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checklist-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 380px) {
+  .safety-hero-title {
+    font-size: 32px;
+  }
+
+  .emergency-card-title {
+    font-size: 21px;
+  }
+
+  .dossier-tab-btn {
+    padding: 8px 14px;
+    font-size: 12.5px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Reduced Motion Preference
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

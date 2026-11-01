@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Official travel safety guide for India. Verified national emergency contacts (112, 1363), regional safety dossiers, hospital directories, and interactive travel checklist."
+  >
+  <meta name="theme-color" content="#102338">
+  <title id="page-title">Travel Safety Center — WanderIndia</title>
+
+  <!-- Google Fonts: DM Sans and Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="safety.css">
+  <script src="data/safety-data.js"></script>
+  <script src="safety.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Shared Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link active" href="safety.html" aria-current="page">Safety Center</a>
+        <a class="nav-cta" href="index.html#destination-search">
+          Find a destination
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Banner -->
+    <section class="safety-hero" aria-labelledby="safety-hero-title">
+      <div class="container">
+        <div class="safety-hero-inner">
+          <div class="safety-hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>Official Travel Safety Resource</span>
+          </div>
+
+          <h1 id="safety-hero-title" class="safety-hero-title">
+            Travel Smarter. <span>Travel Safer.</span>
+          </h1>
+
+          <p class="safety-hero-lead">
+            Authoritative national emergency hotlines, verified healthcare infrastructure, regional safety dossiers, and practical travel checklists to ensure confidence across every Indian journey.
+          </p>
+
+          <!-- Mandatory Legal Disclaimer Banner -->
+          <div class="emergency-disclaimer-callout" role="note" aria-label="Emergency response disclaimer">
+            <div class="disclaimer-icon" aria-hidden="true">ℹ️</div>
+            <div class="disclaimer-content">
+              <strong>Emergency Dispatch Notice:</strong>
+              Emergency numbers connect directly to official Government of India public response centers. WanderIndia is an independent informational directory and does not operate emergency dispatch units. In a life-threatening crisis, dial <strong>112</strong> immediately.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Emergency Help & Helplines (Immediate Action Above the Fold) -->
+    <section class="section-space emergency-section" id="emergency-section" aria-labelledby="emergency-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Immediate Action</p>
+          <h2 id="emergency-heading">Verified Emergency &amp; Assistance Helplines</h2>
+          <p class="section-description">
+            Statutory helplines operated by the Government of India. Accessible free from any phone nationwide.
+          </p>
+        </div>
+
+        <div class="emergency-cards-grid" id="emergency-cards-grid">
+          <!-- Injected dynamically via safety.js from safety-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Destination Safety Guides -->
+    <section class="section-space dossier-section" id="destination-safety-section" aria-labelledby="dossier-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Regional Preparedness</p>
+          <h2 id="dossier-heading">Destination Safety Dossiers</h2>
+          <p class="section-description">
+            Nuanced, factual travel safety guidance tailored to specific geographic terrains, climates, and local regulations.
+          </p>
+        </div>
+
+        <!-- Destination Selector Tabs -->
+        <div class="dossier-controls" role="region" aria-label="Destination safety filter">
+          <div class="dossier-tabs-label">Select a destination:</div>
+          <div class="dossier-tab-pills" id="dossier-tab-pills" role="tablist">
+            <!-- Injected safely via safety.js -->
+          </div>
+        </div>
+
+        <!-- Notification pill if an unknown query parameter was passed -->
+        <div id="dossier-param-notice" class="param-notice-banner" hidden>
+          <span class="notice-icon" aria-hidden="true">ℹ️</span>
+          <span id="dossier-notice-text">Showing general guidelines.</span>
+        </div>
+
+        <!-- Active Dossier Card Container -->
+        <article class="dossier-card" id="dossier-content" aria-live="polite">
+          <!-- Populated dynamically via safety.js -->
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 3: Medical Assistance Locator -->
+    <section class="section-space medical-section" id="medical-section" aria-labelledby="medical-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Healthcare &amp; Urgent Care</p>
+          <h2 id="medical-heading">Medical Assistance in India</h2>
+          <p class="section-description">
+            Understanding India's emergency healthcare system and identifying verified apex medical facilities.
+          </p>
+        </div>
+
+        <div class="medical-overview-grid">
+          <!-- Medical Info Card 1: Ambulance Service -->
+          <div class="medical-info-card">
+            <div class="card-icon" aria-hidden="true">🚑</div>
+            <h3>Ambulance Services (108 / 112)</h3>
+            <p>
+              In medical emergencies, dial <strong>108</strong> (National Ambulance Service) or <strong>112</strong> for immediate medical transport and paramedic stabilization across major Indian states.
+            </p>
+            <div class="card-badge">National Health Mission</div>
+          </div>
+
+          <!-- Medical Info Card 2: Public Apex Hospitals -->
+          <div class="medical-info-card">
+            <div class="card-icon" aria-hidden="true">🏥</div>
+            <h3>Apex Government Teaching Hospitals</h3>
+            <p>
+              Government medical colleges and district civil hospitals provide 24x7 emergency trauma departments, surgical facilities, and subsidized inpatient care.
+            </p>
+            <div class="card-badge">Public Tertiary Healthcare</div>
+          </div>
+
+          <!-- Medical Info Card 3: Private Healthcare & Insurance -->
+          <div class="medical-info-card">
+            <div class="card-icon" aria-hidden="true">🩺</div>
+            <h3>Private Hospitals &amp; Clinics</h3>
+            <p>
+              India features extensive networks of internationally accredited private hospital chains in major metropolitan areas, accommodating comprehensive international travel health insurance.
+            </p>
+            <div class="card-badge">Private Healthcare</div>
+          </div>
+        </div>
+
+        <!-- Active Destination Hospital Spotlight -->
+        <div class="destination-hospital-card" id="destination-hospital-spotlight">
+          <!-- Populated dynamically based on selected destination -->
+        </div>
+
+        <!-- Universal Map Search Option -->
+        <div class="hospital-map-cta">
+          <div class="cta-text">
+            <h3>Need to locate urgent care nearby?</h3>
+            <p>Search verified district hospitals, community health centers, and pharmacies near your current location on Google Maps.</p>
+          </div>
+          <a
+            id="global-hospital-map-btn"
+            class="button button-map-search"
+            href="https://www.google.com/maps/search/?api=1&query=hospital+near+me"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Search Nearby Hospitals on Google Maps</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Medical Disclaimer -->
+        <div class="medical-disclaimer-box">
+          <p>
+            <strong>Medical Notice:</strong> Hospital details displayed represent authenticated apex public institutions and district trauma centers. WanderIndia does not monitor real-time bed capacity, physician rosters, or immediate admission availability. For critical emergencies, contact emergency medical transport (108/112) immediately.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Travel Advisories and Official Meteorological Intelligence -->
+    <section class="section-space advisories-section" id="advisories-section" aria-labelledby="advisories-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Authoritative Bulletins</p>
+          <h2 id="advisories-heading">Official Advisories &amp; Weather Intelligence</h2>
+          <p class="section-description">
+            WanderIndia does not generate simulated live weather or unverified alerts. Check authoritative government meteorological and disaster management bulletins directly.
+          </p>
+        </div>
+
+        <div class="advisories-grid" id="advisories-grid">
+          <!-- Populated dynamically via safety.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Interactive Travel Safety Checklist -->
+    <section class="section-space checklist-section" id="checklist-section" aria-labelledby="checklist-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Personal Readiness</p>
+          <h2 id="checklist-heading">Interactive Travel Safety Checklist</h2>
+          <p class="section-description">
+            A comprehensive, 4-phase preparation guide for your trip across India. Progress is saved privately on your device.
+          </p>
+        </div>
+
+        <div class="checklist-card">
+          <!-- Live Progress Tracker Header -->
+          <div class="checklist-header">
+            <div class="progress-details">
+              <span class="progress-label">Checklist Progress:</span>
+              <span class="progress-text" id="checklist-progress-text" aria-live="polite">0 of 16 Completed (0%)</span>
+            </div>
+
+            <div class="checklist-controls">
+              <button
+                type="button"
+                id="btn-reset-checklist"
+                class="button-text-danger"
+                aria-label="Reset checklist progress"
+              >
+                Reset Progress ↺
+              </button>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="checklist-progress-bar">
+            <div class="progress-fill" id="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+
+          <!-- Storage blocked / incognito alert banner (hidden by default) -->
+          <div id="storage-blocked-banner" class="storage-blocked-notice" hidden>
+            <span aria-hidden="true">⚠️</span>
+            <span>Private/Incognito mode active: Checklist changes will be maintained during this active session only.</span>
+          </div>
+
+          <!-- Interactive Checklist Categories Container -->
+          <div class="checklist-groups" id="checklist-groups-container">
+            <!-- Injected dynamically via safety.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Sources & Verification Transparency Registry -->
+    <section class="section-space sources-section" id="sources-section" aria-labelledby="sources-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Transparency &amp; Governance</p>
+          <h2 id="sources-heading">Authoritative Sources &amp; Verification Registry</h2>
+          <p class="section-description">
+            Every safety guideline, helpline, and hospital listing is backed by an authenticated public institution.
+          </p>
+        </div>
+
+        <div class="sources-table-container">
+          <table class="sources-table">
+            <thead>
+              <tr>
+                <th scope="col">Authority / Source</th>
+                <th scope="col">Scope &amp; Role</th>
+                <th scope="col">Verification Status</th>
+                <th scope="col">Last Audit</th>
+                <th scope="col">Official Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ministry of Home Affairs (MHA)</strong></td>
+                <td>Emergency Response Support System (ERSS - 112)</td>
+                <td><span class="status-badge status-verified">Official Government Service</span></td>
+                <td>October 2026</td>
+                <td><a href="https://112.gov.in/" target="_blank" rel="noopener noreferrer">112.gov.in ↗</a></td>
+              </tr>
+              <tr>
+                <td><strong>Ministry of Tourism, Govt of India</strong></td>
+                <td>National Tourist Infoline (1363) &amp; Certified Guides</td>
+                <td><span class="status-badge status-verified">Official Government Service</span></td>
+                <td>October 2026</td>
+                <td><a href="https://tourism.gov.in/" target="_blank" rel="noopener noreferrer">tourism.gov.in ↗</a></td>
+              </tr>
+              <tr>
+                <td><strong>India Meteorological Department (IMD)</strong></td>
+                <td>Monsoon warnings, cyclonic bulletins &amp; temperature alerts</td>
+                <td><span class="status-badge status-official">Official Source</span></td>
+                <td>October 2026</td>
+                <td><a href="https://mausam.imd.gov.in/index_en.php?lang=en" target="_blank" rel="noopener noreferrer">mausam.imd.gov.in ↗</a></td>
+              </tr>
+              <tr>
+                <td><strong>National Disaster Management Authority (NDMA)</strong></td>
+                <td>National disaster protocols &amp; traveler guidelines</td>
+                <td><span class="status-badge status-official">Official Source</span></td>
+                <td>October 2026</td>
+                <td><a href="https://ndma.gov.in/" target="_blank" rel="noopener noreferrer">ndma.gov.in ↗</a></td>
+              </tr>
+              <tr>
+                <td><strong>State Health Departments &amp; Medical Colleges</strong></td>
+                <td>District civil hospital directories (GMC, SKIMS, SMS, IMS BHU, Darjeeling DH, STNM Gangtok)</td>
+                <td><span class="status-badge status-verified">Verified Public Facility</span></td>
+                <td>October 2026</td>
+                <td><span class="table-text-muted">Regional Portals</span></td>
+              </tr>
+              <tr>
+                <td><strong>State Tourism Boards (GTDC, HPTDC, J&amp;K, RTDC, Kerala, UP, WBTDCL, STDC)</strong></td>
+                <td>State travel advisories &amp; tourist police assistance</td>
+                <td><span class="status-badge status-verified">Official State Portals</span></td>
+                <td>October 2026</td>
+                <td><span class="table-text-muted">Verified Registry</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+      <p>Explore India. Travel Smarter. Travel Safer. © <span id="current-year"></span> WanderIndia.</p>
+      <a class="back-to-top" href="#main-content">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
