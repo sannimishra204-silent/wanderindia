@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Wishlist & Saved Journeys — WanderIndia</title>
+  <meta
+    name="description"
+    content="View and manage your saved favourite Indian destinations, compare regional vibes, and launch tailored itineraries on WanderIndia."
+  >
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Wishlist Stylesheet -->
+  <link rel="stylesheet" href="wishlist.css">
+</head>
+<body class="wishlist-page">
+  <!-- Accessible Skip Link -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Global Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="planner.html">Trip Planner</a>
+        <a class="nav-link" href="safety.html">Safety Center</a>
+        <a class="nav-link active" href="wishlist.html" aria-current="page" id="nav-wishlist-link">
+          Wishlist <span class="nav-badge" id="nav-wishlist-count" hidden>0</span>
+        </a>
+        <a class="nav-cta" href="index.html#destination-search">
+          Find a destination
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" tabindex="-1">
+    <!-- Wishlist Hero -->
+    <section class="wishlist-hero" aria-labelledby="wishlist-hero-title">
+      <div class="container wishlist-hero-inner">
+        <div class="wishlist-badge-pill" role="status">
+          <span aria-hidden="true">❤️</span>
+          <span>Your Curated Travel Collection</span>
+        </div>
+
+        <h1 id="wishlist-hero-title" class="wishlist-hero-heading">
+          Travel Wishlist
+        </h1>
+
+        <p class="wishlist-hero-tagline">
+          Keep track of your dream destinations across India, compare regional vibes, and seamlessly launch your trip planning.
+        </p>
+
+        <div class="wishlist-metrics-bar">
+          <span id="wishlist-count-text">0 saved destinations</span>
+          <span class="metrics-dot" aria-hidden="true">•</span>
+          <span>Stored privately in your browser</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wishlist Workspace -->
+    <div class="container wishlist-workspace">
+      <!-- Active Toolbar -->
+      <div class="wishlist-toolbar" id="wishlist-toolbar" hidden>
+        <div>
+          <span id="toolbar-count-status" style="font-weight: 600; color: var(--color-navy, #102338);">
+            Manage your saved journeys
+          </span>
+        </div>
+        <div class="wishlist-toolbar-actions">
+          <a class="button button-small button-primary" href="planner.html">
+            ✨ Plan a Trip
+          </a>
+          <a class="button button-small button-outline-dark" href="index.html#destinations">
+            + Explore More Destinations
+          </a>
+          <button type="button" id="btn-clear-wishlist" class="button button-small button-danger">
+            Clear Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- State 1: Populated Wishlist Grid -->
+      <section id="wishlist-content-section" aria-labelledby="wishlist-section-title">
+        <h2 id="wishlist-section-title" class="visually-hidden">Saved Destinations</h2>
+        <div class="wishlist-cards-grid" id="wishlist-grid">
+          <!-- Injected dynamically via wishlist.js -->
+        </div>
+      </section>
+
+      <!-- State 2: Polished Empty State -->
+      <div class="wishlist-empty-state" id="wishlist-empty-state">
+        <div class="empty-heart-icon" aria-hidden="true">🤍</div>
+        <h2 class="wishlist-empty-title">Your Wishlist is Empty</h2>
+        <p class="wishlist-empty-desc">
+          You haven't saved any destinations yet. Explore WanderIndia's destinations and click the heart icon on any destination card to curate your personal travel collection.
+        </p>
+        <div>
+          <a class="button button-primary button-large" href="index.html#destinations">
+            ← Explore Destinations
+          </a>
+        </div>
+
+        <div class="wishlist-suggestions">
+          <span class="suggestions-label">Or quickly add a popular destination to your wishlist:</span>
+          <div class="suggestion-chips">
+            <button type="button" class="quick-wishlist-chip" data-slug="kashmir">🏔️ Kashmir</button>
+            <button type="button" class="quick-wishlist-chip" data-slug="goa">🏖️ Goa</button>
+            <button type="button" class="quick-wishlist-chip" data-slug="kerala">🌿 Kerala</button>
+            <button type="button" class="quick-wishlist-chip" data-slug="jaipur">🏛️ Jaipur</button>
+            <button type="button" class="quick-wishlist-chip" data-slug="darjeeling">🍵 Darjeeling</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recently Viewed Destinations on Wishlist Page -->
+      <section class="recently-viewed-section" id="wishlist-recents-container" hidden aria-labelledby="recents-wishlist-heading">
+        <div class="recently-viewed-header">
+          <h3 id="recents-wishlist-heading" class="recently-viewed-title">Recently Viewed Destinations</h3>
+          <button type="button" class="btn-clear-recents" id="btn-clear-wishlist-recents">Clear History</button>
+        </div>
+        <div class="recent-cards-grid" id="wishlist-recents-grid">
+          <!-- Injected safely via JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+      <p>Explore India. Travel Smarter. Travel Safer. © <span id="current-year">2026</span> WanderIndia.</p>
+      <div class="footer-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="planner.html">Trip Planner</a>
+        <a href="safety.html">Safety Center</a>
+        <a href="wishlist.html">Wishlist</a>
+      </div>
+      <a class="back-to-top" href="#main-content">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data/discovery.js"></script>
+  <script src="wishlist.js"></script>
+</body>
+</html>

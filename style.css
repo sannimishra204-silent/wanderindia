@@ -881,6 +881,20 @@ button {
     min-height: 620px;
   }
 
+  .primary-navigation {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    padding: 0 12px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
   .search-panel {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -1173,4 +1187,340 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ==========================================================================
+   WanderIndia Phase 5: Discovery, Collections & Wishlist Styles
+   ========================================================================== */
+
+/* 1. Global Nav Wishlist Badge */
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-orange, #ed8b52);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.nav-badge[hidden] {
+  display: none !important;
+}
+
+/* 2. Heart-shaped Wishlist Button */
+.wishlist-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #555e68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 4px 14px rgba(16, 35, 56, 0.12);
+  transition: transform var(--transition-fast, 180ms ease),
+              background var(--transition-fast, 180ms ease),
+              color var(--transition-fast, 180ms ease),
+              box-shadow var(--transition-fast, 180ms ease);
+}
+
+.wishlist-btn:hover {
+  background: #ffffff;
+  color: #e53935;
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(16, 35, 56, 0.18);
+}
+
+.wishlist-btn:focus-visible {
+  outline: 2px solid var(--color-navy, #102338);
+  outline-offset: 2px;
+}
+
+.wishlist-btn .heart-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-fast, 180ms ease);
+}
+
+.wishlist-btn .heart-path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: fill var(--transition-fast, 180ms ease), stroke var(--transition-fast, 180ms ease);
+}
+
+.wishlist-btn.is-active,
+.wishlist-btn[aria-pressed="true"] {
+  color: #e53935;
+  background: #ffffff;
+  border-color: #ffcdd2;
+}
+
+.wishlist-btn.is-active .heart-path,
+.wishlist-btn[aria-pressed="true"] .heart-path {
+  fill: #e53935;
+  stroke: #e53935;
+}
+
+/* 3. Curated Travel Collections Section (Homepage) */
+.collections-section {
+  background: #f6f5f0;
+  border-top: 1px solid var(--color-line, #e7e5df);
+  border-bottom: 1px solid var(--color-line, #e7e5df);
+}
+
+.collections-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.collections-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 2.25rem;
+}
+
+.collection-tab {
+  background: #ffffff;
+  border: 1.5px solid var(--color-line, #e7e5df);
+  color: var(--color-ink, #17293a);
+  font-family: var(--font-body, "DM Sans", sans-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all var(--transition-fast, 180ms ease);
+}
+
+.collection-tab:hover {
+  background: #fbfaf7;
+  border-color: #c9c6bb;
+  transform: translateY(-1px);
+}
+
+.collection-tab.is-active {
+  background: var(--color-navy, #102338);
+  color: #ffffff;
+  border-color: var(--color-navy, #102338);
+  box-shadow: 0 4px 14px rgba(16, 35, 56, 0.15);
+}
+
+.collection-theme-banner {
+  background: linear-gradient(135deg, var(--color-navy-deep, #0a1929) 0%, var(--color-navy, #102338) 100%);
+  color: #ffffff;
+  border-radius: var(--radius-large, 22px);
+  padding: 2rem 2.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  box-shadow: 0 10px 30px rgba(16, 35, 56, 0.1);
+}
+
+.collection-theme-info h3 {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: 1.65rem;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+
+.collection-theme-info p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 600px;
+}
+
+.collection-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.collection-dest-card {
+  background: #ffffff;
+  border-radius: var(--radius-large, 22px);
+  overflow: hidden;
+  border: 1px solid var(--color-line, #e7e5df);
+  box-shadow: 0 10px 30px rgba(16, 35, 56, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast, 180ms ease), box-shadow var(--transition-fast, 180ms ease);
+  position: relative;
+}
+
+.collection-dest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(16, 35, 56, 0.12);
+}
+
+.collection-dest-card .dest-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.collection-dest-card .dest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium, 300ms ease);
+}
+
+.collection-dest-card:hover .dest-img {
+  transform: scale(1.04);
+}
+
+.collection-dest-card .card-body {
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.collection-dest-card .card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.collection-dest-card .card-region {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-orange-dark, #d97139);
+}
+
+.collection-dest-card .card-title {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: 1.35rem;
+  color: var(--color-navy, #102338);
+  margin: 0 0 0.4rem;
+}
+
+.collection-dest-card .card-overview {
+  font-size: 0.86rem;
+  color: var(--color-muted, #78828c);
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+  flex: 1;
+}
+
+.collection-dest-card .card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-line, #e7e5df);
+  padding-top: 0.85rem;
+}
+
+/* 4. Recently Viewed Strip */
+.recently-viewed-section {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--color-line, #e7e5df);
+  padding-top: 2rem;
+}
+
+.recently-viewed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.recently-viewed-title {
+  font-family: var(--font-heading, "Playfair Display", serif);
+  font-size: 1.35rem;
+  color: var(--color-navy, #102338);
+  margin: 0;
+}
+
+.btn-clear-recents {
+  background: transparent;
+  border: none;
+  color: var(--color-muted, #78828c);
+  font-size: 0.84rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.2rem 0.4rem;
+}
+
+.btn-clear-recents:hover {
+  color: #d32f2f;
+}
+
+.recent-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.15rem;
+}
+
+.recent-dest-card {
+  background: #ffffff;
+  border: 1px solid var(--color-line, #e7e5df);
+  border-radius: var(--radius-medium, 14px);
+  padding: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast, 180ms ease);
+}
+
+.recent-dest-card:hover {
+  border-color: var(--color-navy, #102338);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 35, 56, 0.08);
+}
+
+.recent-card-img {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-small, 8px);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.recent-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-card-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-navy, #102338);
+}
+
+.recent-card-region {
+  font-size: 0.78rem;
+  color: var(--color-muted, #78828c);
 }

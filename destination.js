@@ -1110,7 +1110,662 @@ document.addEventListener("DOMContentLoaded", () => {
       mapUrl:
         "https://www.google.com/maps/search/?api=1&query=Gangtok,+Sikkim,+India",
       related: ["darjeeling", "kashmir"]
-    }
+    },
+
+    mumbai: {
+      "id": "mumbai",
+      "name": "Mumbai",
+      "region": "West India",
+      "category": "Culture",
+      "tag": "City of dreams",
+      "heroImage": "assets/images/mumbai.jpg",
+      "heroAlt": "The iconic Gateway of India overlooking the Arabian Sea in Mumbai",
+      "tagline": "Colonial heritage, coastal art deco promenades, and the unstoppable energy of the Arabian Sea.",
+      "overview": "Perched on India's west coast, Mumbai is a dazzling metropolis of contrasts where Victorian gothic architecture meets the Arabian Sea. From the morning fish auctions at Sassoon Docks to sunset strolls along Marine Drive's Queen's Necklace, Mumbai offers historic rock-cut shrines at Elephanta Island, iconic Irani cafes, and the creative pulse of Bollywood.",
+      "bestTime": "November to February",
+      "bestTimeDetail": "Pleasant coastal temperatures (20°C to 30°C) with low humidity and cool evening sea breezes, ideal for walking tours and harbor cruises.",
+      "idealDuration": "3 to 4 Days",
+      "estimatedBudget": "₹3,000 – ₹7,500 / day",
+      "budgetTiers": [
+            {
+                  "tier": "Budget Traveler",
+                  "cost": "₹2,000 – ₹3,200 / day",
+                  "details": "South Mumbai heritage guesthouses/hostels, local trains, street food, and free promenades."
+            },
+            {
+                  "tier": "Mid-Range Traveler",
+                  "cost": "₹4,500 – ₹8,500 / day",
+                  "details": "Boutique hotels in Colaba/Bandra, app-cabs, heritage dining, and guided museum tours."
+            },
+            {
+                  "tier": "Luxury Traveler",
+                  "cost": "₹15,000+ / day",
+                  "details": "Iconic sea-facing 5-star hotels, fine dining, private chauffeured cars, and private yacht charters."
+            }
+      ],
+      "famousPlaces": [
+            {
+                  "name": "Gateway of India & Taj Mahal Palace",
+                  "type": "Heritage / Architecture",
+                  "desc": "Historic waterfront basalt arch built in 1924 alongside the legendary 1903 heritage palace hotel."
+            },
+            {
+                  "name": "Marine Drive & Chowpatty Beach",
+                  "type": "Coastline / Boulevard",
+                  "desc": "A 3.6 km curved seaside promenade known as the Queen's Necklace, famous for panoramic Arabian Sea sunsets."
+            },
+            {
+                  "name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)",
+                  "type": "UNESCO Heritage",
+                  "desc": "UNESCO World Heritage Victorian Gothic railway headquarters featuring stone gargoyles, domes, and vaulted ceilings."
+            },
+            {
+                  "name": "Elephanta Island Caves",
+                  "type": "UNESCO Ancient Art",
+                  "desc": "UNESCO World Heritage 6th-century rock-cut cave temples dedicated to Lord Shiva on an island in Mumbai Harbor."
+            },
+            {
+                  "name": "Bandra Bandstand & Fort",
+                  "type": "Seaside Heritage",
+                  "desc": "Historic Portuguese coastal fort ruins overlooking the dramatic Bandra-Worli Sea Link with vibrant sea breezes."
+            }
+      ],
+      "activities": [
+            {
+                  "title": "South Mumbai Colonial Architectural Walk",
+                  "desc": "Stroll through Fort and Kala Ghoda to view Indo-Saracenic, Gothic, and Art Deco landmarks."
+            },
+            {
+                  "title": "Elephanta Island Harbor Ferry Excursion",
+                  "desc": "Take a scenic one-hour harbor boat cruise from the Gateway to explore ancient rock-cut cave shrines."
+            },
+            {
+                  "title": "Sunset Promenade at Marine Drive",
+                  "desc": "Join thousands of locals along the seaside promenade as the city lights illuminate along the shoreline."
+            },
+            {
+                  "title": "Kala Ghoda Art & Cafe Culture",
+                  "desc": "Visit contemporary art galleries, historic synagogues, and traditional Parsi cafes."
+            }
+      ],
+      "foodRecommendations": [
+            {
+                  "dish": "Mumbai Vada Pav & Pav Bhaji",
+                  "desc": "The quintessential street-side spiced potato fritter in buttered pav, and spicy mashed vegetable bhaji."
+            },
+            {
+                  "dish": "Bombay Duck & Koli Seafood Thali",
+                  "desc": "Crispy semolina-crusted Bombil fish fry and spicy crab masala prepared in traditional coastal Koli style."
+            },
+            {
+                  "dish": "Parsi Mutton Dhansak & Berry Pulao",
+                  "desc": "Slow-cooked spiced lentil and mutton stew served with caramelised berry rice in heritage Irani cafes."
+            },
+            {
+                  "dish": "Misal Pav & Bhel Puri",
+                  "desc": "Sprouted pulse curry topped with crispy farsan, and iconic sweet-and-sour puffed rice street snacks."
+            },
+            {
+                  "dish": "Bun Maska & Irani Chai",
+                  "desc": "Warm crusty bun slathered with salted butter dunked in sweet, milky cardamom-infused Irani tea."
+            }
+      ],
+      "itinerary": [
+            {
+                  "day": "Day 1",
+                  "title": "Arrival, Gateway of India & Colaba",
+                  "desc": "Check in, explore the Gateway of India, walk the heritage lanes of Colaba, and watch sunset at Marine Drive."
+            },
+            {
+                  "day": "Day 2",
+                  "title": "Elephanta Caves & Historic Fort",
+                  "desc": "Morning ferry to Elephanta Island caves, afternoon architectural tour of CSMT and Kala Ghoda art district."
+            },
+            {
+                  "day": "Day 3",
+                  "title": "Bandra Vibes & Coastal Sunset",
+                  "desc": "Explore the vibrant murals of Bandra, visit Mount Mary Church, Bandra Fort, and drive across the Sea Link."
+            },
+            {
+                  "day": "Day 4",
+                  "title": "Museums, Markets & Departure",
+                  "desc": "Visit Chhatrapati Shivaji Maharaj Vastu Sangrahalaya museum, shop at Crawford Market, and depart."
+            }
+      ],
+      "practicalTips": [
+            "The suburban local train network and Mumbai Metro are fast for daytime transit; avoid peak commuter rush hours (8:30-10:30 AM and 5:30-8:30 PM).",
+            "Metered black-and-yellow taxis (kaali-peeli) in South Mumbai and auto-rickshaws in the suburbs run strictly by official meters.",
+            "Monsoon season (June to September) brings intense rainfall and high tidal waves; coastal sea excursions to Elephanta are suspended during heavy weather.",
+            "Pack comfortable walking shoes and lightweight cotton clothing for exploring the heritage walking districts."
+      ],
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mumbai,+Maharashtra,+India",
+      "related": [
+            "goa",
+            "jaipur"
+      ]
+},
+
+    bhopal: {
+      "id": "bhopal",
+      "name": "Bhopal",
+      "region": "Central India",
+      "category": "Nature",
+      "tag": "City of lakes",
+      "heroImage": "assets/images/bhopal.jpg",
+      "heroAlt": "Scenic waters of the Upper Lake in Bhopal surrounded by lush green hills",
+      "tagline": "Serene historic lakes, ancient rock art, monumental mosques, and lush nature reserves.",
+      "overview": "The capital of Madhya Pradesh, Bhopal is an enchanting blend of natural beauty and cultural heritage split between two massive scenic lakes. Known as the City of Lakes, Bhopal features dramatic grand mosques like the Taj-ul-Masajid, tribal heritage museums, tranquil national parks bordering the water, and quick access to the UNESCO World Heritage rock shelters of Bhimbetka and Buddhist stupas of Sanchi.",
+      "bestTime": "October to March",
+      "bestTimeDetail": "Cool, pleasant winter temperatures (12°C to 26°C), perfect for boat rides on Upper Lake and open-air heritage excursions.",
+      "idealDuration": "3 to 4 Days",
+      "estimatedBudget": "₹1,800 – ₹4,800 / day",
+      "budgetTiers": [
+            {
+                  "tier": "Budget Traveler",
+                  "cost": "₹1,400 – ₹2,400 / day",
+                  "details": "Clean central guesthouses, public bus/e-rickshaw transit, street food, and municipal parks."
+            },
+            {
+                  "tier": "Mid-Range Traveler",
+                  "cost": "₹3,200 – ₹6,000 / day",
+                  "details": "Lake-view heritage hotels or MP Tourism resorts, private taxis, and multi-course dining."
+            },
+            {
+                  "tier": "Luxury Traveler",
+                  "cost": "₹10,000+ / day",
+                  "details": "Historic royal palaces like Jehan Numa Palace, private guided archaeology tours, and lakefront luxury dining."
+            }
+      ],
+      "famousPlaces": [
+            {
+                  "name": "Upper Lake (Bhojtal)",
+                  "type": "Lakes & Nature",
+                  "desc": "Asia's oldest man-made lake built by Raja Bhoj in the 11th century, offering peaceful boat rides and sunset promenades."
+            },
+            {
+                  "name": "Van Vihar National Park",
+                  "type": "Wildlife Sanctuary",
+                  "desc": "A unique open-air zoological park and protected sanctuary running along the banks of the Upper Lake."
+            },
+            {
+                  "name": "Taj-ul-Masajid",
+                  "type": "Heritage / Architecture",
+                  "desc": "One of the largest and most grand mosques in Asia, with soaring pink marble minarets and an immense courtyard."
+            },
+            {
+                  "name": "Bharat Bhavan & Tribal Museum",
+                  "type": "Culture & Arts",
+                  "desc": "A multi-arts complex and world-acclaimed ethnographic museum celebrating indigenous central Indian tribal arts."
+            },
+            {
+                  "name": "Sanchi Stupa & Bhimbetka Caves",
+                  "type": "UNESCO Heritage",
+                  "desc": "Nearby UNESCO World Heritage ancient Buddhist stupas from the 3rd century BCE and 30,000-year-old Paleolithic rock shelters."
+            }
+      ],
+      "activities": [
+            {
+                  "title": "Sunset Boating on Bhojtal",
+                  "desc": "Cruise the placid waters of the Upper Lake on solar boats or pedal boats as the sun sets over the surrounding hills."
+            },
+            {
+                  "title": "Van Vihar Eco-Bicycle Safari",
+                  "desc": "Rent a bicycle to cycle through the peaceful lakeside forest trails observing free-roaming herbivores and birdlife."
+            },
+            {
+                  "title": "Old City Heritage & Bazaars Walk",
+                  "desc": "Wander through the historic gates of the old walled city, Chowk bazaar, and traditional silver markets."
+            },
+            {
+                  "title": "Day Trip to Bhimbetka Rock Shelters",
+                  "desc": "Explore the prehistoric rock shelters with vivid cave paintings dating back over 10,000 years."
+            }
+      ],
+      "foodRecommendations": [
+            {
+                  "dish": "Bhopali Gosht Korma",
+                  "desc": "Slow-cooked tender mutton prepared with rich ground spices, yoghurt, and poppy seed gravy."
+            },
+            {
+                  "dish": "Poha Jalebi & Sulemani Chai",
+                  "desc": "The beloved central Indian breakfast: light spiced flaked rice with crispy sev, warm jalebis, and spiced black tea."
+            },
+            {
+                  "dish": "Bafla & Dal",
+                  "desc": "Traditional oven-baked wheat dough balls dipped in fragrant ghee, accompanied by spicy dal and tangy raw mango pickle."
+            },
+            {
+                  "dish": "Bhopali Biryani & Shahi Tukda",
+                  "desc": "Fragrant layered rice with saffron and mild whole spices, followed by rich cardamom-scented fried bread pudding."
+            },
+            {
+                  "dish": "Bhutte Ka Kees",
+                  "desc": "Spiced grated sweet corn cooked with milk, green chilies, and coconut, a classic Madhya Pradesh delicacy."
+            }
+      ],
+      "itinerary": [
+            {
+                  "day": "Day 1",
+                  "title": "Lakeside Serenity & City Landmarks",
+                  "desc": "Arrive, stroll along VIP Road on Upper Lake, visit Van Vihar National Park, and take an evening boat cruise."
+            },
+            {
+                  "day": "Day 2",
+                  "title": "Old City Architecture & Grand Mosques",
+                  "desc": "Explore Taj-ul-Masajid, Moti Masjid, and Shaukat Mahal; sample street delicacies in Chowk bazaar."
+            },
+            {
+                  "day": "Day 3",
+                  "title": "Arts, Heritage & Bhimbetka Excursion",
+                  "desc": "Morning visit to the Madhya Pradesh Tribal Museum; afternoon day trip to the prehistoric Bhimbetka rock caves."
+            },
+            {
+                  "day": "Day 4",
+                  "title": "Sanchi Buddhist Stupas & Departure",
+                  "desc": "Morning excursion to the Great Stupa of Sanchi, return for shopping, and depart."
+            }
+      ],
+      "practicalTips": [
+            "Pre-book MP Tourism (MPSTDC) vehicles or licensed taxis for day trips to Bhimbetka (45 km) and Sanchi (48 km).",
+            "When visiting Taj-ul-Masajid and other historic mosques, dress conservatively covering head and limbs, and remove footwear before entering.",
+            "Van Vihar National Park allows rented bicycles and electric carts; private petrol vehicles are restricted inside the conservation core.",
+            "Winter nights can become pleasantly chilly (around 10°C to 12°C); pack a light jacket or shawl for evening lake breezes."
+      ],
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bhopal,+Madhya+Pradesh,+India",
+      "related": [
+            "varanasi",
+            "jaipur"
+      ]
+},
+
+    chandigarh: {
+      "id": "chandigarh",
+      "name": "Chandigarh",
+      "region": "North India",
+      "category": "Nature",
+      "tag": "The city beautiful",
+      "heroImage": "assets/images/chandigarh.jpg",
+      "heroAlt": "Sculptural forms and manicured landscapes in Chandigarh's Rock Garden",
+      "tagline": "Modernist Corbusier architecture, expansive green gardens, and Himalayan gateway calm.",
+      "overview": "Designed by legendary modernist architect Le Corbusier, Chandigarh is India's first planned city and the joint capital of Punjab and Haryana. Renowned as 'The City Beautiful', it features wide tree-lined boulevards, self-contained sectors, expansive rose gardens, the surreal recycled sculptures of Nek Chand's Rock Garden, the tranquil Sukhna Lake, and UNESCO-listed Capitol Complex.",
+      "bestTime": "October to March",
+      "bestTimeDetail": "Crisp sunny autumn and winter days (10°C to 24°C) with scenic views of the snow-dusted Shivalik foothills on clear days.",
+      "idealDuration": "2 to 3 Days",
+      "estimatedBudget": "₹2,200 – ₹5,500 / day",
+      "budgetTiers": [
+            {
+                  "tier": "Budget Traveler",
+                  "cost": "₹1,600 – ₹2,600 / day",
+                  "details": "Sector guesthouses, CTU city buses, cycle rickshaws, and local dhaba dining."
+            },
+            {
+                  "tier": "Mid-Range Traveler",
+                  "cost": "₹3,500 – ₹7,000 / day",
+                  "details": "Comfortable Sector 17/35 hotels, app cabs, garden cafes, and architectural tours."
+            },
+            {
+                  "tier": "Luxury Traveler",
+                  "cost": "₹12,000+ / day",
+                  "details": "Upscale 5-star heritage and modern hotels, private car services, and fine Punjabi dining."
+            }
+      ],
+      "famousPlaces": [
+            {
+                  "name": "Nek Chand's Rock Garden",
+                  "type": "Sculpture Park",
+                  "desc": "A 40-acre wonderland of maze-like pathways, waterfalls, and thousands of sculptures made entirely from recycled urban waste."
+            },
+            {
+                  "name": "Sukhna Lake",
+                  "type": "Lakes & Nature",
+                  "desc": "A serene 3-sq-km rain-fed lake at the foot of the Shivalik hills, beloved for morning jogs, boating, and migratory birds."
+            },
+            {
+                  "name": "Zakir Hussain Rose Garden",
+                  "type": "Botanical Gardens",
+                  "desc": "Asia's largest botanical rose garden sprawling over 30 acres with over 50,000 rose bushes and medicinal plants."
+            },
+            {
+                  "name": "The Capitol Complex",
+                  "type": "UNESCO Architecture",
+                  "desc": "UNESCO World Heritage modernist complex designed by Le Corbusier featuring the Open Hand Monument, High Court, and Secretariat."
+            },
+            {
+                  "name": "Sector 17 Plaza & Sector 26 Culinary Hub",
+                  "type": "Urban Culture",
+                  "desc": "The pedestrian shopping heart of the city with open fountains, brand arcades, and traditional Punjabi dhabas."
+            }
+      ],
+      "activities": [
+            {
+                  "title": "Rock Garden Sculptural Exploration",
+                  "desc": "Wander through narrow archways discovering vibrant courtyards built of porcelain shards, bangles, and stone."
+            },
+            {
+                  "title": "Morning Row Boating on Sukhna Lake",
+                  "desc": "Rent a rowboat or pedal boat at sunrise while enjoying views of the tranquil Shivalik mountain ranges."
+            },
+            {
+                  "title": "Corbusier Architectural Tour",
+                  "desc": "Take a guided architectural pilgrimage through the Capitol Complex and the Le Corbusier Centre."
+            },
+            {
+                  "title": "Punjabi Dhaba Feast",
+                  "desc": "Savor authentic rich Punjabi curries, buttery naans, and tall glasses of chilled lassi in Sector 26 or Sector 35."
+            }
+      ],
+      "foodRecommendations": [
+            {
+                  "dish": "Amritsari Kulcha with Chole",
+                  "desc": "Crispy, layered tandoor bread stuffed with spiced potatoes and onions, served with tangy chickpea curry and butter."
+            },
+            {
+                  "dish": "Butter Chicken & Dal Makhani",
+                  "desc": "World-famous slow-simmered creamy tomato chicken curry paired with overnight slow-cooked black lentils."
+            },
+            {
+                  "dish": "Sarson Ka Saag & Makki Ki Roti",
+                  "desc": "Seasonal winter delicacy of spiced mustard greens served with cornmeal flatbread and fresh white butter."
+            },
+            {
+                  "dish": "Tandoori Chicken & Kebabs",
+                  "desc": "Succulent chicken marinated in yoghurt, mustard oil, and ground spices, charred in clay ovens."
+            },
+            {
+                  "dish": "Sweet Punjabi Malai Lassi",
+                  "desc": "Thick creamy churned yoghurt drink topped with a generous dollop of clotted cream and pistachios."
+            }
+      ],
+      "itinerary": [
+            {
+                  "day": "Day 1",
+                  "title": "Modernism & Sculptural Marvels",
+                  "desc": "Arrive, explore the wonder of Nek Chand's Rock Garden, and spend a relaxing afternoon at Sukhna Lake."
+            },
+            {
+                  "day": "Day 2",
+                  "title": "UNESCO Heritage & Botanical Gardens",
+                  "desc": "Morning guided tour of Le Corbusier's Capitol Complex; afternoon stroll in the Rose Garden and Sector 17 Plaza."
+            },
+            {
+                  "day": "Day 3",
+                  "title": "Art, Gastronomy & Gateway Departure",
+                  "desc": "Visit the Government Museum and Art Gallery, enjoy a traditional Punjabi dhaba feast, and depart."
+            }
+      ],
+      "practicalTips": [
+            "Chandigarh's numbered sector grid makes navigation simple; sectors have internal shopping and dining hubs.",
+            "Visits to the UNESCO Capitol Complex require advance permission or guided tour registration at the Sector 1 Tourist Facilitation Centre.",
+            "Sukhna Lake's walking promenade is strictly pedestrian; motorized vehicles are parked in designated perimeter lots.",
+            "Chandigarh serves as the ideal springboard for road trips into the Himachal Pradesh hills (Shimla, Kasauli, Manali)."
+      ],
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Chandigarh,+India",
+      "related": [
+            "manali",
+            "delhi"
+      ]
+},
+
+    delhi: {
+      "id": "delhi",
+      "name": "Delhi",
+      "region": "North India",
+      "category": "Culture",
+      "tag": "Heart of the nation",
+      "heroImage": "assets/images/delhi.jpg",
+      "heroAlt": "India Gate lit up against the evening sky in New Delhi",
+      "tagline": "Mughal grandeur, British imperial avenues, timeless bazaars, and vibrant culinary soul.",
+      "overview": "India's historic and political capital, Delhi is a grand tapestry of eight historical cities spanning more than a millennium. From the red sandstone ramparts of the Mughal Red Fort and narrow spice alleys of Chandni Chowk to the stately tree-lined avenues of Lutyens' New Delhi, UNESCO-listed Humayun's Tomb, and soaring Qutub Minar, Delhi offers an unparalleled cultural journey.",
+      "bestTime": "October to March",
+      "bestTimeDetail": "Pleasant sunny days and brisk evenings (8°C to 25°C), optimal for exploring extensive outdoor monuments and bustling bazaars.",
+      "idealDuration": "3 to 4 Days",
+      "estimatedBudget": "₹2,500 – ₹6,500 / day",
+      "budgetTiers": [
+            {
+                  "tier": "Budget Traveler",
+                  "cost": "₹1,800 – ₹2,800 / day",
+                  "details": "Central guesthouses/hostels, Delhi Metro transit, famous street food, and historic free monuments."
+            },
+            {
+                  "tier": "Mid-Range Traveler",
+                  "cost": "₹4,200 – ₹7,500 / day",
+                  "details": "Comfortable hotels in Connaught Place/South Delhi, app cabs, heritage dining, and guided city walks."
+            },
+            {
+                  "tier": "Luxury Traveler",
+                  "cost": "₹14,000+ / day",
+                  "details": "Historic 5-star grand hotels, private luxury chauffeured sedans, private heritage historians, and gourmet dining."
+            }
+      ],
+      "famousPlaces": [
+            {
+                  "name": "Red Fort (Lal Qila)",
+                  "type": "UNESCO Mughal Fort",
+                  "desc": "UNESCO World Heritage 17th-century Mughal fortress of red sandstone, the historic seat of Mughal power."
+            },
+            {
+                  "name": "India Gate & Kartavya Path",
+                  "type": "National Memorial",
+                  "desc": "Iconic 42-meter war memorial arch framing the grand ceremonial boulevard of independent India."
+            },
+            {
+                  "name": "Qutub Minar Complex",
+                  "type": "UNESCO Ancient Monument",
+                  "desc": "UNESCO World Heritage 73-meter fluted minaret built in 1192, featuring the rust-resistant 4th-century Iron Pillar."
+            },
+            {
+                  "name": "Humayun's Tomb",
+                  "type": "UNESCO Mughal Garden",
+                  "desc": "Magnificent UNESCO World Heritage 16th-century Persian-style garden tomb, the precursor to the Taj Mahal."
+            },
+            {
+                  "name": "Chandni Chowk & Jama Masjid",
+                  "type": "Historic Bazaars & Mosque",
+                  "desc": "Vibrant historic market lanes bustling with spices, street food, and India's largest congregational mosque."
+            }
+      ],
+      "activities": [
+            {
+                  "title": "Old Delhi Rickshaw & Heritage Walk",
+                  "desc": "Ride an eco-friendly rickshaw through Kinari Bazaar, Paranthe Wali Gali, and the Khari Baoli spice market."
+            },
+            {
+                  "title": "Evening Light Show & Walk at India Gate",
+                  "desc": "Stroll the pedestrian gardens of Kartavya Path as India Gate illuminates under evening lights."
+            },
+            {
+                  "title": "Sufi Music at Nizamuddin Dargah",
+                  "desc": "Experience the soulful, transcendent qawwali musical traditions on Thursday evenings."
+            },
+            {
+                  "title": "Lodhi Garden Architecture Walk",
+                  "desc": "Wander past 15th-century Sayyid and Lodhi dynasty tomb pavilions set in manicured landscaped gardens."
+            }
+      ],
+      "foodRecommendations": [
+            {
+                  "dish": "Old Delhi Chaat & Dahi Bhalla",
+                  "desc": "Crispy fried lentil fritters smothered in sweetened chilled yoghurt, zesty tamarind, and mint chutneys."
+            },
+            {
+                  "dish": "Paranthe Wali Gali Paranthas",
+                  "desc": "Crispy pan-fried stuffed flatbreads filled with spiced potato, paneer, cauliflower, or rabri."
+            },
+            {
+                  "dish": "Delhi Butter Chicken & Dal Makhani",
+                  "desc": "Originating in Daryaganj, tender tandoori chicken simmered in rich creamy tomato and butter gravy."
+            },
+            {
+                  "dish": "Chole Bhature",
+                  "desc": "Golden puffed deep-fried bread served with spicy, tangy Punjabi chickpeas and pickled onions."
+            },
+            {
+                  "dish": "Karim's Mutton Seekh Kebabs & Nihari",
+                  "desc": "Historic Old Delhi slow-cooked aromatic meat stew and melt-in-mouth tandoor-grilled kebabs."
+            }
+      ],
+      "itinerary": [
+            {
+                  "day": "Day 1",
+                  "title": "Old Delhi Heritage & Mughal Majesty",
+                  "desc": "Visit the Red Fort, Jama Masjid, and take a heritage culinary walk through Chandni Chowk."
+            },
+            {
+                  "day": "Day 2",
+                  "title": "Imperial Delhi & UNESCO Masterpieces",
+                  "desc": "Explore Humayun's Tomb, drive along Rajpath to India Gate, and stroll Lodhi Gardens."
+            },
+            {
+                  "day": "Day 3",
+                  "title": "Ancient Monuments & Crafts",
+                  "desc": "Visit Qutub Minar, shop at Dilli Haat open-air artisan market, and explore Connaught Place."
+            },
+            {
+                  "day": "Day 4",
+                  "title": "Spiritual Sanctuaries & Departure",
+                  "desc": "Visit Akshardham Temple or Lotus Temple, enjoy an iconic lunch, and prepare for departure."
+            }
+      ],
+      "practicalTips": [
+            "The Delhi Metro is world-class, clean, air-conditioned, and by far the fastest way to travel across the National Capital Region.",
+            "Buy an electronic Metro Tourist Card or smart card to bypass ticket vending queues during peak hours.",
+            "Dress modestly with shoulders and knees covered when visiting religious sites like Jama Masjid, Gurudwara Bangla Sahib, and Akshardham.",
+            "Winter mornings (December and January) can experience morning fog and chilly temperatures; carry warm layered clothing."
+      ],
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=New+Delhi,+India",
+      "related": [
+            "jaipur",
+            "varanasi"
+      ]
+},
+
+    dehradun: {
+      "id": "dehradun",
+      "name": "Dehradun",
+      "region": "North India",
+      "category": "Mountains",
+      "tag": "Doon valley retreat",
+      "heroImage": "assets/images/dehradun.jpg",
+      "heroAlt": "Lush forested valley and Himalayan mountain foothills around Dehradun",
+      "tagline": "Pine-scented Doon valley, colonial institutions, sacred caves, and tranquil monasteries.",
+      "overview": "Cradled in the picturesque Doon Valley between the Ganges and Yamuna rivers, Dehradun is the scenic capital of Uttarakhand and gateway to Mussoorie and the Garhwal Himalayas. Celebrated for its temperate climate, colonial-era institutions like the Forest Research Institute, sacred natural caves at Robber's Cave, rejuvenating mineral springs at Sahastradhara, and serene Tibetan monasteries, Dehradun offers a refreshing mountain retreat.",
+      "bestTime": "March to June & September to November",
+      "bestTimeDetail": "Pleasant sunny weather (15°C to 28°C) with clear mountain views and cool evening breezes from the surrounding Garhwal hills.",
+      "idealDuration": "2 to 3 Days",
+      "estimatedBudget": "₹1,800 – ₹4,800 / day",
+      "budgetTiers": [
+            {
+                  "tier": "Budget Traveler",
+                  "cost": "₹1,400 – ₹2,400 / day",
+                  "details": "Homestays or town lodges, Vikram shared autos, bakery snacks, and local Garhwali meals."
+            },
+            {
+                  "tier": "Mid-Range Traveler",
+                  "cost": "₹3,200 – ₹6,200 / day",
+                  "details": "Lush valley resorts, private rental cars, hillside cafes, and guided forest tours."
+            },
+            {
+                  "tier": "Luxury Traveler",
+                  "cost": "₹10,500+ / day",
+                  "details": "Heritage estates, private wellness retreats, chauffeured mountain SUVs, and farm-to-table dining."
+            }
+      ],
+      "famousPlaces": [
+            {
+                  "name": "Forest Research Institute (FRI)",
+                  "type": "Colonial Architecture",
+                  "desc": "A breathtaking 450-hectare Greco-Roman colonial architectural landmark housing forestry museums and botanical gardens."
+            },
+            {
+                  "name": "Robber's Cave (Guchhupani)",
+                  "type": "Natural River Cave",
+                  "desc": "A 600-meter-long natural limestone river cave where visitors wade through knee-deep stream waters between towering gorge walls."
+            },
+            {
+                  "name": "Sahastradhara",
+                  "type": "Mineral Springs",
+                  "desc": "A natural cascade of thousand-fold sulfur springs renowned for therapeutic mineral waters and limestone dripstone caves."
+            },
+            {
+                  "name": "Mindrolling Monastery & Buddha Temple",
+                  "type": "Tibetan Heritage",
+                  "desc": "One of the largest Tibetan Buddhist learning centers in India with a 107-foot stupa and peaceful gardens."
+            },
+            {
+                  "name": "Tapkeshwar Cave Temple",
+                  "type": "Ancient Sacred Cave",
+                  "desc": "An ancient cave temple dedicated to Lord Shiva set along the Asan riverbed where natural spring water droplets continually fall onto the lingam."
+            }
+      ],
+      "activities": [
+            {
+                  "title": "Wading Through Robber's Cave",
+                  "desc": "Walk inside the narrow limestone river canyon accompanied by cool subterranean streams and natural waterfalls."
+            },
+            {
+                  "title": "Heritage Cycling at FRI",
+                  "desc": "Cycle along the quiet, tree-shaded colonial campus boulevards surrounded by towering eucalyptus and pine trees."
+            },
+            {
+                  "title": "Mindrolling Meditation & Stupa Walk",
+                  "desc": "Spin traditional prayer wheels and admire colorful Tibetan Buddhist murals in the quiet Clement Town gardens."
+            },
+            {
+                  "title": "Famous Dehradun Bakery Tour",
+                  "desc": "Sample fresh rusk, plum cakes, and ginger cookies at legendary century-old bakeries on Rajpur Road."
+            }
+      ],
+      "foodRecommendations": [
+            {
+                  "dish": "Garhwali Kafuli & Phaanu",
+                  "desc": "Nutritious traditional mountain curries made with slow-cooked spinach and local lentils, served with steamed rice."
+            },
+            {
+                  "dish": "Tibetan Momos & Thukpa",
+                  "desc": "Steaming handcrafted dumplings and comforting noodle soups served in the Tibetan settlement cafes."
+            },
+            {
+                  "dish": "Aloo Ke Gutke & Bhang Ki Chutney",
+                  "desc": "Spiced stir-fried mountain potatoes paired with an aromatic roasted hemp seed chutney."
+            },
+            {
+                  "dish": "Bal Mithai & Singori",
+                  "desc": "Famous Kumaoni and Garhwali sweets coated in sugar globules and wrapped in fragrant malu leaves."
+            },
+            {
+                  "dish": "Dehradun Bakery Rusks & Pastries",
+                  "desc": "Iconic fresh milk rusks, cream rolls, and walnut tarts from heritage bakeries along Paltan Bazaar."
+            }
+      ],
+      "itinerary": [
+            {
+                  "day": "Day 1",
+                  "title": "Colonial Architecture & Sacred Caves",
+                  "desc": "Arrive, tour the stately Forest Research Institute, and visit the serene cave shrine of Tapkeshwar."
+            },
+            {
+                  "day": "Day 2",
+                  "title": "Canyon Adventure & Monastery Calm",
+                  "desc": "Wade through the cooling waters of Robber's Cave, followed by an afternoon at Mindrolling Monastery."
+            },
+            {
+                  "day": "Day 3",
+                  "title": "Mineral Springs, Bakeries & Departure",
+                  "desc": "Visit Sahastradhara cascades, browse local bakeries on Rajpur Road, and depart."
+            }
+      ],
+      "practicalTips": [
+            "Carry waterproof footwear or water sandals when visiting Robber's Cave (Guchhupani) as you will be wading through river waters.",
+            "Shared blue three-wheelers (Vikrams) ply designated fixed routes across the city and are very economical.",
+            "The Forest Research Institute is open to tourists on weekdays and Saturdays; carry government photo ID for campus entry.",
+            "Monsoon months (July and August) bring heavy Himalayan downpours; check local weather advisories before cave excursions."
+      ],
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dehradun,+Uttarakhand,+India",
+      "related": [
+            "manali",
+            "chandigarh"
+      ]
+}
   };
 
   // Aliases for friendly parameter handling
@@ -1354,6 +2009,13 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebarSafety.href = `safety.html?place=${encodeURIComponent(data.id)}`;
     }
 
+    const sidebarPlanner = document.querySelector(
+      "#sidebar-planner-link"
+    );
+    if (sidebarPlanner) {
+      sidebarPlanner.href = `planner.html?place=${encodeURIComponent(data.id)}`;
+    }
+
     // 5. Famous Places
     const placesGrid = document.querySelector("#famous-places-grid");
     if (placesGrid) {
@@ -1482,13 +2144,64 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 11. Related Destinations Grid
+    // 11. Travel Discovery: Wishlist, Recommendations & Recently Viewed
+    // Record into Recently Viewed
+    if (window.WANDERINDIA_DISCOVERY) {
+      window.WANDERINDIA_DISCOVERY.addRecentDestination(data.id);
+    }
+
+    // Detail Page Wishlist Toggle
+    const detailWishlistBtn = document.querySelector("#detail-wishlist-btn");
+    if (detailWishlistBtn && window.WANDERINDIA_DISCOVERY) {
+      detailWishlistBtn.setAttribute("data-slug", data.id);
+      const isSaved = window.WANDERINDIA_DISCOVERY.isInWishlist(data.id);
+      detailWishlistBtn.classList.toggle("is-active", isSaved);
+      detailWishlistBtn.setAttribute("aria-pressed", String(isSaved));
+      detailWishlistBtn.setAttribute(
+        "aria-label",
+        isSaved ? `Remove ${data.name} from wishlist` : `Add ${data.name} to wishlist`
+      );
+      const textSpan = detailWishlistBtn.querySelector("#detail-wishlist-text");
+      if (textSpan) textSpan.textContent = isSaved ? "Saved in Wishlist" : "Save to Wishlist";
+
+      detailWishlistBtn.onclick = (e) => {
+        e.preventDefault();
+        const res = window.WANDERINDIA_DISCOVERY.toggleWishlist(data.id);
+        detailWishlistBtn.classList.toggle("is-active", res.isSaved);
+        detailWishlistBtn.setAttribute("aria-pressed", String(res.isSaved));
+        detailWishlistBtn.setAttribute(
+          "aria-label",
+          res.isSaved ? `Remove ${data.name} from wishlist` : `Add ${data.name} to wishlist`
+        );
+        if (textSpan) textSpan.textContent = res.isSaved ? "Saved in Wishlist" : "Save to Wishlist";
+      };
+    }
+
+    // Section Title
+    const relatedDestName = document.querySelector("#related-dest-name");
+    if (relatedDestName) {
+      relatedDestName.textContent = data.name;
+    }
+
+    // Related & Recommended Destinations Grid
     const relatedGrid = document.querySelector("#related-destinations-grid");
-    if (relatedGrid && Array.isArray(data.related)) {
+    function renderRelatedDestinations(activeInterest = "all") {
+      if (!relatedGrid) return;
       relatedGrid.textContent = "";
-      data.related.forEach((relId) => {
-        const relData = DESTINATIONS[relId];
-        if (!relData) return;
+
+      let list = [];
+      if (window.WANDERINDIA_DISCOVERY) {
+        list = window.WANDERINDIA_DISCOVERY.getRecommendations(data.id, activeInterest, 3);
+      } else if (Array.isArray(data.related)) {
+        list = data.related.map((id) => ({
+          dest: DESTINATIONS[id],
+          matchReason: "Curated partner"
+        })).filter(item => !!item.dest);
+      }
+
+      list.forEach((rec) => {
+        const relData = rec.dest;
+        if (!relData || relData.id === data.id) return;
 
         const card = createSafeElement("article", "destination-card");
         card.setAttribute("data-slug", relData.id);
@@ -1505,6 +2218,32 @@ document.addEventListener("DOMContentLoaded", () => {
         const tag = createSafeElement("span", "destination-tag", relData.tag);
         imgWrap.appendChild(img);
         imgWrap.appendChild(tag);
+
+        // Match reason badge
+        if (rec.matchReason) {
+          const badge = createSafeElement("span", "rec-match-badge", rec.matchReason);
+          imgWrap.appendChild(badge);
+        }
+
+        // Heart Wishlist Button
+        if (window.WANDERINDIA_DISCOVERY) {
+          const isItemSaved = window.WANDERINDIA_DISCOVERY.isInWishlist(relData.id);
+          const heartBtn = createSafeElement("button", isItemSaved ? "wishlist-btn is-active" : "wishlist-btn");
+          heartBtn.type = "button";
+          heartBtn.setAttribute("data-slug", relData.id);
+          heartBtn.setAttribute(
+            "aria-label",
+            isItemSaved ? `Remove ${relData.name} from wishlist` : `Add ${relData.name} to wishlist`
+          );
+          heartBtn.setAttribute("aria-pressed", String(isItemSaved));
+          heartBtn.innerHTML = window.WANDERINDIA_DISCOVERY.createHeartSvg();
+          heartBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.WANDERINDIA_DISCOVERY.toggleWishlist(relData.id);
+          });
+          imgWrap.appendChild(heartBtn);
+        }
 
         // Card Content
         const content = createSafeElement("div", "destination-card-content");
@@ -1547,12 +2286,64 @@ document.addEventListener("DOMContentLoaded", () => {
         card.appendChild(content);
 
         card.addEventListener("click", (e) => {
-          if (e.target.closest("a")) return;
+          if (e.target.closest("a") || e.target.closest("button")) return;
           window.location.href = `destination.html?place=${encodeURIComponent(relData.id)}`;
         });
 
         relatedGrid.appendChild(card);
       });
+    }
+
+    // Recommendation Interest Filters
+    const recFilters = document.querySelectorAll("#recommendation-filters .rec-filter-btn");
+    recFilters.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        recFilters.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        const interest = btn.getAttribute("data-interest") || "all";
+        renderRelatedDestinations(interest);
+      });
+    });
+
+    renderRelatedDestinations("all");
+
+    // Recently Viewed Journeys
+    function renderRecents() {
+      const recentsContainer = document.querySelector("#recently-viewed-container");
+      const recentsGrid = document.querySelector("#recently-viewed-grid");
+      const clearRecentsBtn = document.querySelector("#btn-clear-recents");
+
+      if (!window.WANDERINDIA_DISCOVERY || !recentsContainer || !recentsGrid) return;
+      const recents = window.WANDERINDIA_DISCOVERY.getRecentDestinations(data.id);
+
+      if (!recents || recents.length === 0) {
+        recentsContainer.hidden = true;
+        recentsGrid.innerHTML = "";
+      } else {
+        recentsContainer.hidden = false;
+        recentsGrid.innerHTML = recents.map((r) => `
+          <a class="recent-dest-card" href="destination.html?place=${encodeURIComponent(r.id)}">
+            <img class="recent-card-img" src="${r.heroImage}" alt="${r.name}" loading="lazy">
+            <div class="recent-card-info">
+              <span class="recent-card-name">${r.name}</span>
+              <span class="recent-card-region">${r.region}</span>
+            </div>
+          </a>
+        `).join("");
+
+        if (clearRecentsBtn) {
+          clearRecentsBtn.onclick = () => {
+            window.WANDERINDIA_DISCOVERY.clearRecentDestinations();
+            recentsContainer.hidden = true;
+            recentsGrid.innerHTML = "";
+          };
+        }
+      }
+    }
+    renderRecents();
+
+    if (window.WANDERINDIA_DISCOVERY) {
+      window.WANDERINDIA_DISCOVERY.syncAllHeartButtons();
     }
 
     // Reveal Content

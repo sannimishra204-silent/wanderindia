@@ -1059,3 +1059,116 @@ input:focus-visible,
     scroll-behavior: auto !important;
   }
 }
+
+
+/* ==========================================================================
+   WanderIndia Phase 5: Destination Discovery & Recommendation Styles
+   ========================================================================== */
+
+/* Detail Page Hero Wishlist Button */
+.button-detail-wishlist {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-family: var(--font-body, "DM Sans", sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-fast, 180ms ease);
+}
+
+.button-detail-wishlist:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.button-detail-wishlist.is-active,
+.button-detail-wishlist[aria-pressed="true"] {
+  background: #ffffff;
+  color: #e53935;
+  border-color: #ffcdd2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.button-detail-wishlist .heart-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.button-detail-wishlist .heart-path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: fill var(--transition-fast, 180ms ease);
+}
+
+.button-detail-wishlist.is-active .heart-path,
+.button-detail-wishlist[aria-pressed="true"] .heart-path {
+  fill: #e53935;
+  stroke: #e53935;
+}
+
+/* Recommendation Filter Chips */
+.recommendation-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.rec-filter-btn {
+  background: #ffffff;
+  border: 1.5px solid var(--color-line, #e7e5df);
+  color: var(--color-ink, #17293a);
+  font-family: var(--font-body, "DM Sans", sans-serif);
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-fast, 180ms ease);
+}
+
+.rec-filter-btn:hover {
+  background: #fbfaf7;
+  border-color: #c9c6bb;
+}
+
+.rec-filter-btn.is-active {
+  background: var(--color-navy, #102338);
+  color: #ffffff;
+  border-color: var(--color-navy, #102338);
+  box-shadow: 0 2px 8px rgba(16, 35, 56, 0.15);
+}
+
+.rec-match-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(16, 35, 56, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  z-index: 2;
+}
+
+.rec-dest-desc {
+  font-size: 0.85rem;
+  color: var(--color-muted, #78828c);
+  line-height: 1.45;
+  margin: 0.35rem 0 0.75rem;
+}

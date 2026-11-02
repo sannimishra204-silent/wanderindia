@@ -21,6 +21,7 @@
   >
 
   <link rel="stylesheet" href="style.css">
+  <script src="data/discovery.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 
@@ -49,7 +50,9 @@
       <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
         <a class="nav-link" href="#home">Home</a>
         <a class="nav-link" href="#destinations">Destinations</a>
+        <a class="nav-link" href="planner.html">Trip Planner</a>
         <a class="nav-link" href="safety.html">Safety Center</a>
+        <a class="nav-link" href="wishlist.html" id="nav-wishlist-link">Wishlist <span class="nav-badge" id="nav-wishlist-count" hidden>0</span></a>
         <a class="nav-cta" href="#destination-search">
           Find a destination
           <span aria-hidden="true">↗</span>
@@ -136,6 +139,7 @@
                 <option value="south">South India</option>
                 <option value="west">West India</option>
                 <option value="east">East India</option>
+                <option value="central">Central India</option>
               </select>
             </div>
 
@@ -190,7 +194,7 @@
           </div>
 
           <p class="results-count" id="results-count" aria-live="polite">
-            Showing 8 destinations
+            Showing 13 destinations
           </p>
         </div>
 
@@ -214,7 +218,12 @@
               >
               <span class="destination-number">01</span>
               <span class="destination-tag">Coastal escape</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="goa" aria-label="Add Goa to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">West India</p>
@@ -239,13 +248,18 @@
             <div class="destination-image-wrap">
               <img
                 class="destination-image"
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                src="assets/images/manali.jpg"
                 alt="Snow-dusted Himalayan mountains near Manali"
                 loading="lazy"
               >
               <span class="destination-number">02</span>
               <span class="destination-tag">Mountain air</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="manali" aria-label="Add Manali to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">North India</p>
@@ -270,13 +284,18 @@
             <div class="destination-image-wrap">
               <img
                 class="destination-image"
-                src="assets/images/kashmir.jpeg"
+                src="assets/images/kashmir.jpg"
                 alt="A calm lake and mountain scenery in Kashmir"
                 loading="lazy"
               >
               <span class="destination-number">03</span>
               <span class="destination-tag">Alpine calm</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="kashmir" aria-label="Add Kashmir to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">North India</p>
@@ -307,7 +326,12 @@
               >
               <span class="destination-number">04</span>
               <span class="destination-tag">Heritage &amp; colour</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="jaipur" aria-label="Add Jaipur to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">West India</p>
@@ -338,7 +362,12 @@
               >
               <span class="destination-number">05</span>
               <span class="destination-tag">Backwater retreat</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="kerala" aria-label="Add Kerala to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">South India</p>
@@ -369,7 +398,12 @@
               >
               <span class="destination-number">06</span>
               <span class="destination-tag">A city of stories</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="varanasi" aria-label="Add Varanasi to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">North India</p>
@@ -394,13 +428,18 @@
             <div class="destination-image-wrap">
               <img
                 class="destination-image"
-                src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                src="assets/images/Darjeeling.jpg"
                 alt="Rolling green tea estates and mountain ridges in Darjeeling"
                 loading="lazy"
               >
               <span class="destination-number">07</span>
               <span class="destination-tag">Queen of the Hills</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="darjeeling" aria-label="Add Darjeeling to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">East India</p>
@@ -425,13 +464,18 @@
             <div class="destination-image-wrap">
               <img
                 class="destination-image"
-                src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                src="assets/images/Gangtok.jpg"
                 alt="Mountain vistas and prayer flags overlooking Gangtok, Sikkim"
                 loading="lazy"
               >
               <span class="destination-number">08</span>
               <span class="destination-tag">Cloud kingdom</span>
-            </div>
+            
+              <button type="button" class="wishlist-btn" data-slug="gangtok" aria-label="Add Gangtok to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
             <div class="destination-card-content">
               <div>
                 <p class="destination-region">East India</p>
@@ -442,11 +486,252 @@
               </a>
             </div>
           </article>
+          <article
+            class="destination-card"
+            data-name="Mumbai"
+            data-slug="mumbai"
+            data-region="west"
+            data-category="culture"
+            data-state="Maharashtra"
+            data-attractions="Gateway of India, Marine Drive, Chhatrapati Shivaji Maharaj Terminus, Elephanta Caves, Bandra Fort, Colaba"
+            data-aliases="Bombay"
+          >
+            <div class="destination-image-wrap">
+              <img
+                class="destination-image"
+                src="assets/images/mumbai.jpg"
+                alt="Gateway of India waterfront landmark in Mumbai"
+                loading="lazy"
+              >
+              <span class="destination-number">09</span>
+              <span class="destination-tag">City of dreams</span>
+            
+              <button type="button" class="wishlist-btn" data-slug="mumbai" aria-label="Add Mumbai to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
+            <div class="destination-card-content">
+              <div>
+                <p class="destination-region">West India</p>
+                <h3><a class="destination-title-link" href="destination.html?place=mumbai">Mumbai</a></h3>
+              </div>
+              <a class="destination-arrow" href="destination.html?place=mumbai" aria-label="Explore Mumbai details">
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="destination-card"
+            data-name="Bhopal"
+            data-slug="bhopal"
+            data-region="central"
+            data-category="nature"
+            data-state="Madhya Pradesh"
+            data-attractions="Upper Lake, Van Vihar National Park, Taj-ul-Masajid, Bharat Bhavan, Bhimbetka, Sanchi"
+            data-aliases="Bhojtal, City of Lakes"
+          >
+            <div class="destination-image-wrap">
+              <img
+                class="destination-image"
+                src="assets/images/bhopal.jpg"
+                alt="Scenic waters and lush greenery around Upper Lake in Bhopal"
+                loading="lazy"
+              >
+              <span class="destination-number">10</span>
+              <span class="destination-tag">City of lakes</span>
+            
+              <button type="button" class="wishlist-btn" data-slug="bhopal" aria-label="Add Bhopal to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
+            <div class="destination-card-content">
+              <div>
+                <p class="destination-region">Central India</p>
+                <h3><a class="destination-title-link" href="destination.html?place=bhopal">Bhopal</a></h3>
+              </div>
+              <a class="destination-arrow" href="destination.html?place=bhopal" aria-label="Explore Bhopal details">
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="destination-card"
+            data-name="Chandigarh"
+            data-slug="chandigarh"
+            data-region="north"
+            data-category="nature"
+            data-state="Chandigarh"
+            data-attractions="Rock Garden, Sukhna Lake, Zakir Hussain Rose Garden, Capitol Complex, Sector 17 Plaza, Pinjore"
+            data-aliases="The City Beautiful"
+          >
+            <div class="destination-image-wrap">
+              <img
+                class="destination-image"
+                src="assets/images/chandigarh.jpg"
+                alt="Sculptural arches and gardens at Nek Chand's Rock Garden in Chandigarh"
+                loading="lazy"
+              >
+              <span class="destination-number">11</span>
+              <span class="destination-tag">The city beautiful</span>
+            
+              <button type="button" class="wishlist-btn" data-slug="chandigarh" aria-label="Add Chandigarh to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
+            <div class="destination-card-content">
+              <div>
+                <p class="destination-region">North India</p>
+                <h3><a class="destination-title-link" href="destination.html?place=chandigarh">Chandigarh</a></h3>
+              </div>
+              <a class="destination-arrow" href="destination.html?place=chandigarh" aria-label="Explore Chandigarh details">
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="destination-card"
+            data-name="Delhi"
+            data-slug="delhi"
+            data-region="north"
+            data-category="culture"
+            data-state="Delhi"
+            data-attractions="Red Fort, India Gate, Qutub Minar, Humayun's Tomb, Chandni Chowk, Jama Masjid, Akshardham"
+            data-aliases="New Delhi, Dilli"
+          >
+            <div class="destination-image-wrap">
+              <img
+                class="destination-image"
+                src="assets/images/delhi.jpg"
+                alt="India Gate war memorial lit against the evening sky in Delhi"
+                loading="lazy"
+              >
+              <span class="destination-number">12</span>
+              <span class="destination-tag">Heart of the nation</span>
+            
+              <button type="button" class="wishlist-btn" data-slug="delhi" aria-label="Add Delhi to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
+            <div class="destination-card-content">
+              <div>
+                <p class="destination-region">North India</p>
+                <h3><a class="destination-title-link" href="destination.html?place=delhi">Delhi</a></h3>
+              </div>
+              <a class="destination-arrow" href="destination.html?place=delhi" aria-label="Explore Delhi details">
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="destination-card"
+            data-name="Dehradun"
+            data-slug="dehradun"
+            data-region="north"
+            data-category="mountains"
+            data-state="Uttarakhand"
+            data-attractions="Forest Research Institute, Robber's Cave, Sahastradhara, Mindrolling Monastery, Tapkeshwar Temple"
+            data-aliases="Doon, Dehradoon"
+          >
+            <div class="destination-image-wrap">
+              <img
+                class="destination-image"
+                src="assets/images/Dehradun.jpg"
+                alt="Scenic Himalayan foothills and forested valley around Dehradun"
+                loading="lazy"
+              >
+              <span class="destination-number">13</span>
+              <span class="destination-tag">Doon valley retreat</span>
+            
+              <button type="button" class="wishlist-btn" data-slug="dehradun" aria-label="Add Dehradun to wishlist" aria-pressed="false">
+                <svg class="heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button></div>
+            <div class="destination-card-content">
+              <div>
+                <p class="destination-region">North India</p>
+                <h3><a class="destination-title-link" href="destination.html?place=dehradun">Dehradun</a></h3>
+              </div>
+              <a class="destination-arrow" href="destination.html?place=dehradun" aria-label="Explore Dehradun details">
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
         </div>
 
         <p class="no-results" id="no-results" hidden>
           No destinations match those filters. Try another search or clear your filters.
         </p>
+      </div>
+    </section>
+
+    <!-- Travel Collections Section -->
+    <section class="collections-section section-space" id="travel-collections" aria-labelledby="collections-title">
+      <div class="container">
+        <div class="collections-header">
+          <p class="eyebrow">Curated Collections</p>
+          <h2 id="collections-title">Inspiring Journeys by Theme</h2>
+          <p class="section-description">
+            Handpicked collections bringing together destinations that share a common spirit and travel style.
+          </p>
+        </div>
+
+        <!-- Collection Selector Tabs -->
+        <div class="collections-tabs" role="tablist" aria-label="Curated travel collections">
+          <button type="button" class="collection-tab is-active" role="tab" aria-selected="true" data-collection="mountains">
+            <span>🏔️</span> Escape to the Mountains
+          </button>
+          <button type="button" class="collection-tab" role="tab" aria-selected="false" data-collection="coastal">
+            <span>🏖️</span> Coastal &amp; Beach Getaways
+          </button>
+          <button type="button" class="collection-tab" role="tab" aria-selected="false" data-collection="culture">
+            <span>🏛️</span> Heritage &amp; Spiritual Culture
+          </button>
+          <button type="button" class="collection-tab" role="tab" aria-selected="false" data-collection="nature">
+            <span>🌿</span> Nature &amp; Wildlife
+          </button>
+          <button type="button" class="collection-tab" role="tab" aria-selected="false" data-collection="northeast">
+            <span>⛩️</span> Explore the Northeast
+          </button>
+          <button type="button" class="collection-tab" role="tab" aria-selected="false" data-collection="peaceful">
+            <span>🧘</span> Peaceful Retreats
+          </button>
+        </div>
+
+        <!-- Collection Theme Banner -->
+        <div class="collection-theme-banner" id="collection-theme-banner">
+          <div class="collection-theme-info">
+            <h3 id="collection-theme-title">Escape to the Mountains</h3>
+            <p id="collection-theme-sub">High Himalayan valleys, snow-capped peaks, and pine-scented mountain air.</p>
+          </div>
+          <button type="button" id="btn-filter-collection" class="button button-gold">
+            Filter all destinations by this theme ↗
+          </button>
+        </div>
+
+        <!-- Collection Cards Grid -->
+        <div class="collection-cards-grid" id="collection-cards-grid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently Viewed Section on Homepage -->
+    <section class="recently-viewed-home-section container" id="recently-viewed-home" hidden aria-labelledby="recents-home-title">
+      <div class="recently-viewed-header">
+        <h2 id="recents-home-title" class="recently-viewed-title">Recently Viewed Destinations</h2>
+        <button type="button" class="btn-clear-recents" id="btn-clear-home-recents">Clear History</button>
+      </div>
+      <div class="recent-cards-grid" id="recently-viewed-home-grid">
+        <!-- Injected safely via JS -->
       </div>
     </section>
   </main>
@@ -461,3 +746,5 @@
       <a class="back-to-top" href="#home">Back to top ↑</a>
     </div>
   </footer>
+</body>
+</html>

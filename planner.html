@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Trip Planner — WanderIndia</title>
+  <meta
+    name="description"
+    content="Generate tailored day-by-day travel itineraries and transparent budget breakdowns for top destinations across India with WanderIndia's Smart Trip Planner."
+  >
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Planner Stylesheet -->
+  <link rel="stylesheet" href="planner.css">
+</head>
+<body class="planner-page">
+  <!-- Accessible Skip Link -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Global Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link active" href="planner.html" aria-current="page">Trip Planner</a>
+        <a class="nav-link" href="safety.html">Safety Center</a>
+        <a class="nav-link" href="wishlist.html" id="nav-wishlist-link">Wishlist <span class="nav-badge" id="nav-wishlist-count" hidden>0</span></a>
+        <a class="nav-cta" href="index.html#destination-search">
+          Find a destination
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" tabindex="-1">
+    <!-- Planner Hero Section -->
+    <section class="planner-hero" aria-labelledby="planner-hero-title">
+      <div class="container planner-hero-inner">
+        <div class="hero-badge-pill" role="status">
+          <span class="badge-sparkle" aria-hidden="true">✨</span>
+          <span>Smart Travel Technology • Deterministic Planning</span>
+        </div>
+
+        <h1 id="planner-hero-title" class="planner-hero-heading">
+          Smart Trip Planner
+        </h1>
+
+        <p class="planner-hero-tagline">
+          Tailored day-by-day itineraries and transparent budget breakdowns for India's premier destinations.
+        </p>
+
+        <div class="hero-trust-bar" aria-label="Planner guarantees">
+          <span class="trust-item"><span class="trust-icon" aria-hidden="true">🔒</span> 100% Client-Side Privacy</span>
+          <span class="trust-sep" aria-hidden="true">•</span>
+          <span class="trust-item"><span class="trust-icon" aria-hidden="true">⚡</span> Instant Deterministic Routing</span>
+          <span class="trust-sep" aria-hidden="true">•</span>
+          <span class="trust-item"><span class="trust-icon" aria-hidden="true">🛡️</span> Linked to Safety Center</span>
+          <span class="trust-sep" aria-hidden="true">•</span>
+          <span class="trust-item"><span class="trust-icon" aria-hidden="true">📄</span> Print &amp; PDF Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saved Trip Notification Banner (Hidden by default, shown if saved trip exists) -->
+    <aside id="saved-trip-alert" class="saved-trip-alert" hidden aria-live="polite">
+      <div class="container saved-trip-inner">
+        <div class="saved-trip-info">
+          <span class="saved-trip-icon" aria-hidden="true">📁</span>
+          <div class="saved-trip-text">
+            <strong>Saved Trip Loaded:</strong>
+            <span id="saved-trip-summary">You have an itinerary saved in this browser.</span>
+          </div>
+        </div>
+        <div class="saved-trip-actions">
+          <button type="button" id="btn-dismiss-saved-alert" class="button button-small button-outline-dark">
+            Dismiss Notice
+          </button>
+          <button type="button" id="btn-clear-saved" class="button button-small button-danger">
+            Clear Saved Trip
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Planner Workspace (Two-Column Responsive Layout) -->
+    <div class="container planner-workspace">
+      <!-- Left Column: Preferences Form -->
+      <section class="planner-form-card" aria-labelledby="form-heading">
+        <div class="card-header">
+          <h2 id="form-heading" class="card-title">Customize Your Journey</h2>
+          <p class="card-subtitle">
+            Configure your travel parameters to generate an authentic, day-by-day itinerary.
+          </p>
+        </div>
+
+        <form id="planner-form" novalidate>
+          <!-- A. Starting / Departure City -->
+          <div class="form-group">
+            <label for="departure-city" class="form-label">
+              Starting / Departure City
+              <span class="required" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-icon" aria-hidden="true">🛫</span>
+              <input
+                type="text"
+                id="departure-city"
+                name="departureCity"
+                class="form-control"
+                placeholder="e.g., Mumbai, New Delhi, Bengaluru"
+                required
+                autocomplete="off"
+                aria-describedby="departure-city-hint departure-city-error"
+              >
+            </div>
+            <p id="departure-city-hint" class="field-hint">
+              Note: Used for trip framing. WanderIndia does not calculate transit distances or live flight/train fares.
+            </p>
+            <p id="departure-city-error" class="field-error" role="alert" aria-live="polite" hidden></p>
+          </div>
+
+          <!-- B. Destination Dropdown -->
+          <div class="form-group">
+            <label for="planner-destination" class="form-label">
+              Destination in India
+              <span class="required" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-icon" aria-hidden="true">📍</span>
+              <select
+                id="planner-destination"
+                name="destination"
+                class="form-control"
+                required
+                aria-describedby="destination-hint destination-error"
+              >
+                <option value="">Select a destination (13 available)</option>
+                <option value="goa">Goa — Sun, Sand &amp; Portuguese Heritage (West)</option>
+                <option value="manali">Manali — Snow Peaks, Pine Valleys &amp; High Passes (North)</option>
+                <option value="kashmir">Kashmir — Paradise on Earth &amp; Alpine Lakes (North)</option>
+                <option value="jaipur">Jaipur — Pink City Palaces &amp; Historic Forts (West)</option>
+                <option value="kerala">Kerala — God's Own Country &amp; Emerald Backwaters (South)</option>
+                <option value="varanasi">Varanasi — Ancient Spiritual Capital on the Ganges (North)</option>
+                <option value="darjeeling">Darjeeling — Queen of the Hills, Tea &amp; Kanchenjunga (East)</option>
+                <option value="gangtok">Gangtok — Monasteries, Cloud Forests &amp; Himalayan Vistas (East)</option>
+                <option value="mumbai">Mumbai — Maximum City, Gateway &amp; Coastal Vibrance (West)</option>
+                <option value="bhopal">Bhopal — City of Lakes, Heritage &amp; Serene Waters (Central)</option>
+                <option value="chandigarh">Chandigarh — The City Beautiful, Gardens &amp; Modernist Design (North)</option>
+                <option value="delhi">Delhi — The Capital of Empires, Heritage &amp; Vibrant Bazaars (North)</option>
+                <option value="dehradun">Dehradun — Foothills Gateway, Forest Sanctuaries &amp; Valleys (North)</option>
+              </select>
+            </div>
+            <div id="destination-preview-pill" class="destination-preview-pill" hidden aria-live="polite"></div>
+            <p id="destination-hint" class="field-hint">
+              Select any of WanderIndia's 8 curated destinations. Aliases are automatically resolved.
+            </p>
+            <p id="destination-error" class="field-error" role="alert" aria-live="polite" hidden></p>
+          </div>
+
+          <!-- C. Trip Duration (1 - 14 Days) -->
+          <div class="form-group">
+            <div class="form-label-row">
+              <label for="duration-number" class="form-label">
+                Trip Duration (1 – 14 Days)
+                <span class="required" aria-hidden="true">*</span>
+              </label>
+              <span class="duration-badge" id="duration-badge" aria-live="polite">5 Days</span>
+            </div>
+
+            <div class="duration-controls">
+              <input
+                type="range"
+                id="duration-range"
+                name="durationRange"
+                min="1"
+                max="14"
+                value="5"
+                step="1"
+                class="duration-range-slider"
+                aria-label="Trip duration slider (1 to 14 days)"
+              >
+              <div class="duration-number-wrap">
+                <input
+                  type="number"
+                  id="duration-number"
+                  name="durationNumber"
+                  min="1"
+                  max="14"
+                  value="5"
+                  class="form-control duration-number-input"
+                  aria-label="Trip duration numeric input"
+                >
+                <span class="unit-text">Days</span>
+              </div>
+            </div>
+
+            <!-- Quick Duration Chips -->
+            <div class="duration-chips" role="group" aria-label="Common trip duration presets">
+              <button type="button" class="chip-btn" data-days="3">3 Days (Weekend)</button>
+              <button type="button" class="chip-btn active" data-days="5">5 Days (Standard)</button>
+              <button type="button" class="chip-btn" data-days="7">7 Days (1 Week)</button>
+              <button type="button" class="chip-btn" data-days="10">10 Days</button>
+              <button type="button" class="chip-btn" data-days="14">14 Days (Grand Tour)</button>
+            </div>
+            <p id="duration-error" class="field-error" role="alert" aria-live="polite" hidden></p>
+          </div>
+
+          <!-- D. Travellers (Adults & Children) -->
+          <div class="form-group">
+            <span class="form-label">
+              Travellers
+              <span class="required" aria-hidden="true">*</span>
+            </span>
+            <div class="travellers-grid">
+              <!-- Adults -->
+              <div class="traveller-card">
+                <div class="traveller-meta">
+                  <label for="adults-count" class="traveller-title">Adults</label>
+                  <span class="traveller-sub">Age 12+</span>
+                </div>
+                <div class="stepper">
+                  <button
+                    type="button"
+                    class="stepper-btn"
+                    id="adults-minus"
+                    aria-label="Decrease adult count"
+                  >−</button>
+                  <input
+                    type="number"
+                    id="adults-count"
+                    name="adults"
+                    min="1"
+                    max="10"
+                    value="2"
+                    class="stepper-input"
+                    aria-label="Number of adults (1 to 10)"
+                  >
+                  <button
+                    type="button"
+                    class="stepper-btn"
+                    id="adults-plus"
+                    aria-label="Increase adult count"
+                  >+</button>
+                </div>
+              </div>
+
+              <!-- Children -->
+              <div class="traveller-card">
+                <div class="traveller-meta">
+                  <label for="children-count" class="traveller-title">Children</label>
+                  <span class="traveller-sub">Age 2–11</span>
+                </div>
+                <div class="stepper">
+                  <button
+                    type="button"
+                    class="stepper-btn"
+                    id="children-minus"
+                    aria-label="Decrease children count"
+                  >−</button>
+                  <input
+                    type="number"
+                    id="children-count"
+                    name="children"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="stepper-input"
+                    aria-label="Number of children (0 to 10)"
+                  >
+                  <button
+                    type="button"
+                    class="stepper-btn"
+                    id="children-plus"
+                    aria-label="Increase children count"
+                  >+</button>
+                </div>
+              </div>
+            </div>
+            <p class="field-hint">
+              Calculates lodging and dining; children are weighted at 50% for standard accommodation &amp; meal estimations.
+            </p>
+            <p id="travellers-error" class="field-error" role="alert" aria-live="polite" hidden></p>
+          </div>
+
+          <!-- E. Estimated Total Trip Budget INR -->
+          <div class="form-group">
+            <label for="total-budget" class="form-label">
+              Target Trip Budget (INR)
+              <span class="optional-label">(Optional)</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-icon" aria-hidden="true">₹</span>
+              <input
+                type="number"
+                id="total-budget"
+                name="totalBudget"
+                class="form-control"
+                min="1000"
+                step="1000"
+                placeholder="e.g., 50000"
+                aria-describedby="budget-hint budget-preview budget-error"
+              >
+            </div>
+            <div id="budget-preview" class="budget-formatted-preview" aria-live="polite"></div>
+            <p id="budget-hint" class="field-hint">
+              Optional. We will compare our estimated total against your budget to indicate whether your preferences fit.
+            </p>
+            <p id="budget-error" class="field-error" role="alert" aria-live="polite" hidden></p>
+          </div>
+
+          <!-- F. Travel Interests (Multi-select) -->
+          <fieldset class="form-group">
+            <legend class="form-label">
+              Travel Interests
+              <span class="optional-label">(Select all that apply)</span>
+            </legend>
+            <div class="interests-grid" role="group" aria-label="Selectable travel interests">
+              <label class="interest-checkbox-card">
+                <input type="checkbox" name="interests" value="mountains">
+                <span class="interest-card-inner">
+                  <span class="interest-icon" aria-hidden="true">🏔️</span>
+                  <span class="interest-name">Mountains</span>
+                  <span class="interest-desc">Peaks, trails &amp; valleys</span>
+                </span>
+              </label>
+
+              <label class="interest-checkbox-card">
+                <input type="checkbox" name="interests" value="beaches">
+                <span class="interest-card-inner">
+                  <span class="interest-icon" aria-hidden="true">🏖️</span>
+                  <span class="interest-name">Beaches</span>
+                  <span class="interest-desc">Coastlines &amp; sunsets</span>
+                </span>
+              </label>
+
+              <label class="interest-checkbox-card">
+                <input type="checkbox" name="interests" value="culture" checked>
+                <span class="interest-card-inner">
+                  <span class="interest-icon" aria-hidden="true">🏛️</span>
+                  <span class="interest-name">Culture &amp; Heritage</span>
+                  <span class="interest-desc">Monuments, forts &amp; traditions</span>
+                </span>
+              </label>
+
+              <label class="interest-checkbox-card">
+                <input type="checkbox" name="interests" value="nature" checked>
+                <span class="interest-card-inner">
+                  <span class="interest-icon" aria-hidden="true">🌿</span>
+                  <span class="interest-name">Nature &amp; Wildlife</span>
+                  <span class="interest-desc">Flora, fauna &amp; serene lakes</span>
+                </span>
+              </label>
+
+              <label class="interest-checkbox-card">
+                <input type="checkbox" name="interests" value="food" checked>
+                <span class="interest-card-inner">
+                  <span class="interest-icon" aria-hidden="true">🍲</span>
+                  <span class="interest-name">Food &amp; Dining</span>
+                  <span class="interest-desc">Authentic regional dishes</span>
+                </span>
+              </label>
+            </div>
+            <p class="field-hint">
+              Selected interests prioritize matching attractions in your day-by-day itinerary.
+            </p>
+          </fieldset>
+
+          <!-- G. Travel Style -->
+          <fieldset class="form-group">
+            <legend class="form-label">
+              Travel Style &amp; Accommodation Standard
+              <span class="required" aria-hidden="true">*</span>
+            </legend>
+
+            <div class="style-radios-grid" role="radiogroup" aria-label="Travel style preferences">
+              <!-- Budget -->
+              <label class="style-radio-card">
+                <input type="radio" name="travelStyle" value="budget">
+                <span class="style-card-inner">
+                  <span class="style-card-header">
+                    <span class="style-name">Budget</span>
+                    <span class="style-rate-tag">~₹1.5k–2.2k/day</span>
+                  </span>
+                  <span class="style-desc">
+                    Hostels, clean homestays, public/shared local transport, and authentic street &amp; dhaba dining.
+                  </span>
+                </span>
+              </label>
+
+              <!-- Balanced -->
+              <label class="style-radio-card">
+                <input type="radio" name="travelStyle" value="balanced" checked>
+                <span class="style-card-inner">
+                  <span class="style-card-header">
+                    <span class="style-name">Balanced <span class="badge-rec">Recommended</span></span>
+                    <span class="style-rate-tag">~₹3.8k–5.8k/day</span>
+                  </span>
+                  <span class="style-desc">
+                    3-star / boutique heritage stays, private city cabs, and curated multi-cuisine restaurants.
+                  </span>
+                </span>
+              </label>
+
+              <!-- Premium -->
+              <label class="style-radio-card">
+                <input type="radio" name="travelStyle" value="premium">
+                <span class="style-card-inner">
+                  <span class="style-card-header">
+                    <span class="style-name">Premium</span>
+                    <span class="style-rate-tag">~₹9k–12.5k+/day</span>
+                  </span>
+                  <span class="style-desc">
+                    4/5-star luxury heritage resorts, dedicated chauffeur-driven car, and gourmet chef experiences.
+                  </span>
+                </span>
+              </label>
+            </div>
+
+            <p class="field-hint">
+              * Note: Travel styles represent planning preferences based on regional benchmarks. They are not guaranteed quotes or live hotel/cab rates.
+            </p>
+          </fieldset>
+
+          <!-- Form Submit / Reset Actions -->
+          <div class="form-actions">
+            <button type="submit" id="btn-generate" class="button button-primary button-large">
+              <span>✨ Create My Trip</span>
+            </button>
+            <button type="button" id="btn-reset" class="button button-outline-dark">
+              Reset Form
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Right Column: Results Display Area -->
+      <section class="planner-results-card" aria-labelledby="results-heading">
+        <h2 id="results-heading" class="visually-hidden">Generated Travel Plan &amp; Budget</h2>
+
+        <!-- State 1: Empty / Initial Prompt State -->
+        <div id="planner-empty-state" class="planner-empty-state">
+          <div class="empty-graphic" aria-hidden="true">🗺️</div>
+          <h3 class="empty-title">Ready to Design Your Indian Journey?</h3>
+          <p class="empty-desc">
+            Select your destination, duration, travellers, and travel style on the left, then click 
+            <strong>"Create My Trip"</strong> to generate an authentic day-by-day itinerary and transparent budget breakdown.
+          </p>
+
+          <div class="empty-suggestions">
+            <span class="suggestion-title">Or pick a popular Indian destination to start:</span>
+            <div class="suggestion-pills">
+              <button type="button" class="quick-pick-pill" data-dest="kashmir">🏔️ Kashmir</button>
+              <button type="button" class="quick-pick-pill" data-dest="goa">🏖️ Goa</button>
+              <button type="button" class="quick-pick-pill" data-dest="kerala">🌿 Kerala</button>
+              <button type="button" class="quick-pick-pill" data-dest="jaipur">🏛️ Jaipur</button>
+              <button type="button" class="quick-pick-pill" data-dest="varanasi">🕉️ Varanasi</button>
+              <button type="button" class="quick-pick-pill" data-dest="manali">🌲 Manali</button>
+              <button type="button" class="quick-pick-pill" data-dest="darjeeling">🍵 Darjeeling</button>
+              <button type="button" class="quick-pick-pill" data-dest="gangtok">⛩️ Gangtok</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- State 2: Active Generated Trip Output (Hidden initially) -->
+        <div id="planner-output" class="planner-output" hidden>
+          <!-- Destination Trip Banner Header -->
+          <div class="trip-banner" id="trip-banner">
+            <div class="trip-banner-media">
+              <img
+                id="trip-banner-img"
+                class="trip-banner-img"
+                src=""
+                alt=""
+                loading="lazy"
+              >
+              <div class="trip-banner-overlay"></div>
+            </div>
+            <div class="trip-banner-content">
+              <div class="trip-banner-meta">
+                <span class="banner-pill" id="banner-region-pill">Region</span>
+                <span class="banner-pill" id="banner-category-pill">Category</span>
+              </div>
+              <h3 class="trip-banner-title" id="banner-destination-title">Destination Name</h3>
+              <p class="trip-banner-subtitle" id="banner-tagline">Destination Tagline</p>
+              <div class="trip-params-summary" id="banner-params-summary">
+                <!-- Populated via JS: Departure, Duration, Travellers, Style -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Safety Center Contextual Callout -->
+          <div class="planner-safety-callout" id="planner-safety-callout">
+            <div class="safety-callout-icon" aria-hidden="true">🛡️</div>
+            <div class="safety-callout-text">
+              <strong>Verified Safety &amp; Medical Dossier Available</strong>
+              <p id="safety-callout-message">
+                Review official 24/7 helplines, government apex hospitals, and verified travel safety advisories for this destination.
+              </p>
+            </div>
+            <a
+              id="planner-safety-link"
+              class="button button-small button-outline-dark safety-callout-btn"
+              href="safety.html"
+            >
+              Open Safety Dossier ↗
+            </a>
+          </div>
+
+          <!-- Actions Toolbar (Save, Print, Regenerate) -->
+          <div class="planner-toolbar" role="toolbar" aria-label="Itinerary tools">
+            <div class="toolbar-left">
+              <button type="button" id="btn-save-trip" class="button button-small button-primary">
+                💾 Save Itinerary
+              </button>
+              <button type="button" id="btn-print-trip" class="button button-small button-outline-dark">
+                🖨️ Print / Save as PDF
+              </button>
+              <button type="button" id="btn-regenerate" class="button button-small button-outline-dark">
+                🔄 Regenerate Itinerary
+              </button>
+            </div>
+            <div class="toolbar-right">
+              <span id="save-status-msg" class="save-status-msg" role="status" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- Section 1: Estimated Budget Breakdown -->
+          <section class="planner-section budget-section" aria-labelledby="budget-section-title">
+            <div class="section-title-wrap">
+              <span class="section-icon" aria-hidden="true">💰</span>
+              <div>
+                <h3 id="budget-section-title" class="section-heading">Estimated Budget Breakdown</h3>
+                <p class="section-subheading">
+                  Transparent, deterministic estimate calculated from regional accommodation, dining, and transit benchmarks.
+                </p>
+              </div>
+            </div>
+
+            <!-- Key Cost Metric Cards -->
+            <div class="budget-metrics-grid">
+              <div class="metric-card metric-total">
+                <span class="metric-label">Estimated Total Trip Cost</span>
+                <span class="metric-value" id="cost-total-display">₹0</span>
+                <span class="metric-note" id="cost-total-note">For all travellers &amp; days</span>
+              </div>
+
+              <div class="metric-card metric-per-person">
+                <span class="metric-label">Estimated Cost / Traveller</span>
+                <span class="metric-value" id="cost-per-traveller-display">₹0</span>
+                <span class="metric-note" id="cost-per-traveller-note">Average per person</span>
+              </div>
+
+              <div class="metric-card metric-comparison" id="metric-comparison-card">
+                <span class="metric-label">Budget Comparison</span>
+                <div class="comparison-status" id="comparison-status">
+                  <span class="status-pill status-neutral">Baseline Estimate</span>
+                </div>
+                <span class="metric-note" id="comparison-detail">Enter target budget to check fit</span>
+              </div>
+            </div>
+
+            <!-- Category Breakdown Table & Bars -->
+            <div class="category-breakdown-card">
+              <h4 class="breakdown-subtitle">Category Allocations</h4>
+              <div class="breakdown-bars-visual" id="breakdown-bars-visual" aria-hidden="true">
+                <div class="bar-segment bar-accommodation" style="width: 40%;" title="Accommodation 40%"></div>
+                <div class="bar-segment bar-food" style="width: 25%;" title="Food & Dining 25%"></div>
+                <div class="bar-segment bar-transport" style="width: 15%;" title="Local Transit 15%"></div>
+                <div class="bar-segment bar-activities" style="width: 12%;" title="Activities & Sightseeing 12%"></div>
+                <div class="bar-segment bar-contingency" style="width: 8%;" title="Contingency 8%"></div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="budget-table" aria-label="Detailed budget category breakdown">
+                  <thead>
+                    <tr>
+                      <th scope="col">Category</th>
+                      <th scope="col">Allocation</th>
+                      <th scope="col">Estimated Cost</th>
+                      <th scope="col">What It Covers</th>
+                    </tr>
+                  </thead>
+                  <tbody id="budget-table-body">
+                    <!-- Populated dynamically via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Budget Disclaimers & Inclusions / Exclusions -->
+            <div class="budget-scope-box">
+              <div class="scope-col">
+                <span class="scope-title scope-inc">✓ What Is Included</span>
+                <ul class="scope-list">
+                  <li>Standard accommodation matching selected travel style.</li>
+                  <li>Breakfast, lunch, and dinner at local dining establishments.</li>
+                  <li>Intra-city local transportation (autos, local taxis, app cabs).</li>
+                  <li>Standard monument entry tickets and sightseeing activities.</li>
+                  <li>8% contingency cushion for minor incidental travel expenses.</li>
+                </ul>
+              </div>
+              <div class="scope-col">
+                <span class="scope-title scope-exc">✕ What Is Excluded</span>
+                <ul class="scope-list">
+                  <li>Inter-city transport (flights, trains, interstate buses) to destination.</li>
+                  <li>Personal shopping, souvenirs, and luxury boutique retail.</li>
+                  <li>Travel medical insurance and visa/permit processing fees.</li>
+                  <li>Peak festive season surcharges (e.g. Christmas/New Year/Diwali surges).</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="budget-disclaimer-callout">
+              <strong>Planning Disclaimer:</strong> All amounts shown are illustrative planning estimates computed deterministically from regional travel baselines. WanderIndia does not provide live booking, hotel reservations, or real-time ticket pricing. Actual costs may vary based on seasonal availability, booking timing, and individual discretion.
+            </p>
+          </section>
+
+          <!-- Section 2: Day-by-Day Itinerary Timeline -->
+          <section class="planner-section itinerary-section" aria-labelledby="itinerary-section-title">
+            <div class="section-title-wrap">
+              <span class="section-icon" aria-hidden="true">🗓️</span>
+              <div>
+                <h3 id="itinerary-section-title" class="section-heading">Day-by-Day Suggested Itinerary</h3>
+                <p class="section-subheading">
+                  Curated daily program distributing authentic destination attractions, local food, and cultural highlights.
+                </p>
+              </div>
+            </div>
+
+            <p class="itinerary-operational-notice" role="note">
+              <span class="notice-icon" aria-hidden="true">ℹ️</span>
+              <span><strong>Operational Notice:</strong> Activities and timings below are suggested planning recommendations based on verified destination profiles. WanderIndia does not fabricate live opening hours or transport schedules. Please confirm specific monument timings locally.</span>
+            </p>
+
+            <!-- Day Cards Container -->
+            <div class="timeline-days-container" id="timeline-days-container">
+              <!-- Populated dynamically via planner.js -->
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Global Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="index.html#home" aria-label="WanderIndia home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">Wander<span>India</span></span>
+      </a>
+      <p>
+        Made for curious travellers exploring incredible India. Explore responsibly, travel safely, and respect local traditions.
+      </p>
+      <div class="footer-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="planner.html">Trip Planner</a>
+        <a href="safety.html">Safety Center</a>
+      </div>
+      <p class="copyright">&copy; <span id="current-year">2026</span> WanderIndia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Planner Script -->
+  <script src="data/discovery.js"></script>
+  <script src="planner.js"></script>
+</body>
+</html>
