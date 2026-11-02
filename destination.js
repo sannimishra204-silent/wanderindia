@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "North India",
       category: "Mountains",
       tag: "Alpine calm",
-      heroImage: "assets/images/kashmir.jpeg",
+      heroImage: "assets/images/kashmir.jpg",
       heroAlt: "Mirror-still lake and misty mountain landscape in Kashmir",
       tagline:
         "Misty Dal Lake shikaras, blossoming Mughal gardens & alpine meadows.",
@@ -980,8 +980,7 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "East India",
       category: "Mountains",
       tag: "Cloud kingdom",
-      heroImage:
-        "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1800&q=85",
+      heroImage: "assets/images/Gangtok.jpg",
       heroAlt: "Majestic mountain ridges and prayer flags overlooking Gangtok, Sikkim",
       tagline:
         "Clean mountain avenues, sacred Buddhist monasteries & high Himalayan alpine passes.",
@@ -1251,7 +1250,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "region": "Central India",
       "category": "Nature",
       "tag": "City of lakes",
-      "heroImage": "assets/images/bhopal.jpg",
+      "heroImage": "assets/images/Bhopal.jpg",
       "heroAlt": "Scenic waters of the Upper Lake in Bhopal surrounded by lush green hills",
       "tagline": "Serene historic lakes, ancient rock art, monumental mosques, and lush nature reserves.",
       "overview": "The capital of Madhya Pradesh, Bhopal is an enchanting blend of natural beauty and cultural heritage split between two massive scenic lakes. Known as the City of Lakes, Bhopal features dramatic grand mosques like the Taj-ul-Masajid, tribal heritage museums, tranquil national parks bordering the water, and quick access to the UNESCO World Heritage rock shelters of Bhimbetka and Buddhist stupas of Sanchi.",
@@ -1645,7 +1644,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "region": "North India",
       "category": "Mountains",
       "tag": "Doon valley retreat",
-      "heroImage": "assets/images/dehradun.jpg",
+      "heroImage": "assets/images/Dehradun.jpg",
       "heroAlt": "Lush forested valley and Himalayan mountain foothills around Dehradun",
       "tagline": "Pine-scented Doon valley, colonial institutions, sacred caves, and tranquil monasteries.",
       "overview": "Cradled in the picturesque Doon Valley between the Ganges and Yamuna rivers, Dehradun is the scenic capital of Uttarakhand and gateway to Mussoorie and the Garhwal Himalayas. Celebrated for its temperate climate, colonial-era institutions like the Forest Research Institute, sacred natural caves at Robber's Cave, rejuvenating mineral springs at Sahastradhara, and serene Tibetan monasteries, Dehradun offers a refreshing mountain retreat.",

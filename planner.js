@@ -1000,7 +1000,7 @@
       "region": "Central India",
       "category": "Nature",
       "tag": "City of Lakes",
-      "heroImage": "assets/images/bhopal.jpg",
+      "heroImage": "assets/images/Bhopal.jpg",
       "tagline": "Serene historic lakes, ancient rock art, monumental mosques, and lush nature reserves.",
       "dailyRates": {
             "budget": 1600,
@@ -1324,7 +1324,7 @@
       "region": "North India",
       "category": "Mountains",
       "tag": "Doon Valley Retreat",
-      "heroImage": "assets/images/dehradun.jpg",
+      "heroImage": "assets/images/Dehradun.jpg",
       "tagline": "Pine-scented Doon valley, colonial institutions, sacred caves, and tranquil monasteries.",
       "dailyRates": {
             "budget": 1700,
