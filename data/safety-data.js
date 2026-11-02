@@ -673,6 +673,331 @@
               "For any medical emergencies, the 1,000-bed STNM Multi-Specialty Government Hospital in Sochakgang provides comprehensive emergency and trauma treatment. On border routes toward Nathula, Indian Army medical transit posts provide emergency high-altitude first aid and stabilization."
           }
         ]
+      },
+
+      mumbai: {
+              "id": "mumbai",
+              "name": "Mumbai",
+              "region": "West India",
+              "category": "Coastal Metropolis & Heritage",
+              "heroTag": "Coastal Metropolis",
+              "officialTourismBoard": {
+                      "name": "Maharashtra Tourism Development Corporation (MTDC)",
+                      "url": "https://www.maharashtratourism.gov.in/",
+                      "verificationStatus": "Official State Portal",
+                      "lastVerified": "October 2026"
+              },
+              "policeContact": {
+                      "name": "Mumbai Tourist Police Unit / Colaba Outpost",
+                      "location": "Shahid Bhagat Singh Road, Colaba, Mumbai",
+                      "phone": "+91 22 2285 2885",
+                      "telUri": "tel:+912222852885",
+                      "verificationStatus": "Verified Civic Contact",
+                      "lastVerified": "October 2026"
+              },
+              "medicalFacility": {
+                      "name": "King Edward Memorial (KEM) Hospital",
+                      "location": "Acharya Donde Marg, Parel, Mumbai",
+                      "facilityType": "Premier Municipal Multi-Specialty Government Hospital & 24x7 Level-1 Trauma Centre",
+                      "phone": "+91 22 2410 7000",
+                      "telUri": "tel:+912224107000",
+                      "source": "Municipal Corporation of Greater Mumbai (MCGM)",
+                      "verificationStatus": "Verified Public Facility",
+                      "lastVerified": "October 2026",
+                      "mapQuery": "KEM Hospital, Parel, Mumbai, Maharashtra"
+              },
+              "guidance": [
+                      {
+                              "category": "Transit Safety & Rush Hours",
+                              "title": "Suburban Rail Commuter Precautions",
+                              "detail": "Suburban local trains carry millions daily. Strictly avoid boarding or leaning out of open compartment doorways. Avoid commuter peak hours (8:30-10:30 AM and 5:30-8:30 PM) when traveling with luggage."
+                      },
+                      {
+                              "category": "Coastal Promenades & High Tides",
+                              "title": "Marine Drive & Bandra Promenade Swell Warnings",
+                              "detail": "During high-tide bulletins and monsoon surges, ocean swells break over the tetrapods. Maintain a safe distance from coastal sea walls and obey civic lifeguards."
+                      },
+                      {
+                              "category": "Weather & Seasonal Preparation",
+                              "title": "Monsoon Inundation Awareness",
+                              "detail": "Mumbai receives intense rainfall between June and August. Low-lying transit areas may experience temporary waterlogging, and Elephanta ferry boats are suspended during rough weather. Monitor civic advisories."
+                      },
+                      {
+                              "category": "Transport Conduct & Fares",
+                              "title": "Metered Cabs & Authorized Transit",
+                              "detail": "Black-and-yellow taxis (kaali-peeli) in South Mumbai and auto-rickshaws in the suburbs operate strictly by electronic meter. Insist on meter activation before starting your journey."
+                      },
+                      {
+                              "category": "Crowded Bazaars & Personal Belongings",
+                              "title": "Vigilance in High-Density Markets",
+                              "detail": "In bustling commercial hubs like Colaba Causeway and Crawford Market, carry backpacks in front and keep passports, wallets, and mobile devices in zipped inner compartments."
+                      },
+                      {
+                              "category": "Emergency Infrastructure",
+                              "title": "Round-the-Clock Emergency Facilities",
+                              "detail": "KEM Hospital in Parel and Bombay Hospital in Marine Lines provide comprehensive round-the-clock trauma treatment. Dial 112 for immediate police assistance across Mumbai metropolitan limits."
+                      }
+              ]
+      },
+
+      bhopal: {
+              "id": "bhopal",
+              "name": "Bhopal",
+              "region": "Central India",
+              "category": "Lakes & Cultural Heritage",
+              "heroTag": "Lake City Safety",
+              "officialTourismBoard": {
+                      "name": "Madhya Pradesh State Tourism Development Corporation (MPSTDC)",
+                      "url": "https://www.mptourism.com/",
+                      "verificationStatus": "Official State Portal",
+                      "lastVerified": "October 2026"
+              },
+              "policeContact": {
+                      "name": "Bhopal Tourist Police Assistance Desk",
+                      "location": "Shyamala Hills Police Station, Bhopal",
+                      "phone": "+91 755 244 3000",
+                      "telUri": "tel:+917552443000",
+                      "verificationStatus": "Verified Civic Contact",
+                      "lastVerified": "October 2026"
+              },
+              "medicalFacility": {
+                      "name": "All India Institute of Medical Sciences (AIIMS) Bhopal",
+                      "location": "Saket Nagar, AIIMS Campus, Bhopal",
+                      "facilityType": "Premier Central Government Autonomous Multi-Specialty Hospital & 24x7 Trauma Centre",
+                      "phone": "+91 755 267 2317",
+                      "telUri": "tel:+917552672317",
+                      "source": "Ministry of Health and Family Welfare, Government of India",
+                      "verificationStatus": "Verified Public Facility",
+                      "lastVerified": "October 2026",
+                      "mapQuery": "AIIMS Bhopal, Saket Nagar, Bhopal, Madhya Pradesh"
+              },
+              "guidance": [
+                      {
+                              "category": "Water Safety & Boating Protocols",
+                              "title": "Upper Lake Life-Jacket Compliance",
+                              "detail": "Always wear mandatory life-jackets on all boat rides on Bhojtal (Upper Lake). Swimming in unmonitored open water sections is strictly prohibited by municipal authorities."
+                      },
+                      {
+                              "category": "Local Rules & Respectful Conduct",
+                              "title": "Monument & Mosque Visitor Etiquette",
+                              "detail": "When entering Taj-ul-Masajid or historic religious monuments, dress modestly covering shoulders and knees, and remove footwear. Photography is restricted during prayer congregations."
+                      },
+                      {
+                              "category": "National Park Wildlife Protocols",
+                              "title": "Van Vihar Open-Air Sanctuary Guidelines",
+                              "detail": "Adhere to marked nature paths when cycling or walking in Van Vihar National Park. Maintain a safe distance from wildlife, keep speeds under 20 km/h, and avoid feeding animals."
+                      },
+                      {
+                              "category": "Heritage Excursion Safety",
+                              "title": "Registered Vehicles for Cave Excursions",
+                              "detail": "When arranging outstation trips to Bhimbetka Rock Shelters (45 km) or Sanchi Stupas (48 km), use verified MPSTDC tourist cabs or licensed operators rather than unvetted private taxis."
+                      },
+                      {
+                              "category": "Seasonal Weather & Hydration",
+                              "title": "Central Indian Summer Heat Management",
+                              "detail": "Summer months (April to June) bring temperatures exceeding 40°C. Carry ample drinking water, use electrolyte hydration packets, and schedule outdoor sightseeing in early mornings."
+                      },
+                      {
+                              "category": "Emergency Infrastructure",
+                              "title": "AIIMS Bhopal & Central Referral Access",
+                              "detail": "AIIMS Bhopal in Saket Nagar provides premier 24x7 emergency and trauma care with modern diagnostic facilities. For immediate local emergencies, dial 112 nationwide."
+                      }
+              ]
+      },
+
+      chandigarh: {
+              "id": "chandigarh",
+              "name": "Chandigarh",
+              "region": "North India",
+              "category": "Modernist City & Gardens",
+              "heroTag": "Urban Planning Safety",
+              "officialTourismBoard": {
+                      "name": "Chandigarh Tourism (CITCO)",
+                      "url": "https://chandigarhtourism.gov.in/",
+                      "verificationStatus": "Official State Portal",
+                      "lastVerified": "October 2026"
+              },
+              "policeContact": {
+                      "name": "Chandigarh Police Tourist Support Desk",
+                      "location": "Sector 17 Central Police Station, Chandigarh",
+                      "phone": "+91 172 277 3990",
+                      "telUri": "tel:+911722773990",
+                      "verificationStatus": "Verified Civic Contact",
+                      "lastVerified": "October 2026"
+              },
+              "medicalFacility": {
+                      "name": "Postgraduate Institute of Medical Education & Research (PGIMER)",
+                      "location": "Sector 12, Chandigarh",
+                      "facilityType": "Apex Autonomous National Multi-Specialty Hospital & 24x7 Advanced Trauma Centre",
+                      "phone": "+91 172 274 6018",
+                      "telUri": "tel:+911722746018",
+                      "source": "Ministry of Health and Family Welfare, Government of India",
+                      "verificationStatus": "Verified Public Facility",
+                      "lastVerified": "October 2026",
+                      "mapQuery": "PGIMER, Sector 12, Chandigarh"
+              },
+              "guidance": [
+                      {
+                              "category": "Pedestrian & Traffic Discipline",
+                              "title": "Strict Traffic Law Compliance & Crossings",
+                              "detail": "Chandigarh rigorously enforces traffic regulations using digital surveillance. Cross broad avenues only at designated zebra crossings with pedestrian signals to ensure safety."
+                      },
+                      {
+                              "category": "Lakeside Safety & Embankments",
+                              "title": "Sukhna Lake Boating & Promenade Guidelines",
+                              "detail": "Wearing life-jackets is compulsory during pedal and row boating on Sukhna Lake. Keep children supervised along the waterfront walkway and observe evening curfew hours."
+                      },
+                      {
+                              "category": "Government Zone Access",
+                              "title": "Capitol Complex Visitor Permits",
+                              "detail": "The UNESCO World Heritage Le Corbusier Capitol Complex houses active high offices. Access requires pre-arranged tourist entry passes from the Tourist Information Centre in Sector 1."
+                      },
+                      {
+                              "category": "Urban Navigation & Sectors",
+                              "title": "Numbered Sector Grid Orientation",
+                              "detail": "The city follows a geometric sector grid; remember your destination sector number when boarding CTU city buses or auto-rickshaws for clear communication."
+                      },
+                      {
+                              "category": "Himalayan Gateway Transit",
+                              "title": "Hill Road Readiness from the Gateway",
+                              "detail": "Chandigarh is the primary springboard for hill transit to Himachal Pradesh. Before driving into Shivalik routes, ensure complete vehicle mountain fitness and tire grip."
+                      },
+                      {
+                              "category": "Emergency Infrastructure",
+                              "title": "PGIMER Advanced Medical Care",
+                              "detail": "PGIMER in Sector 12 is one of India's foremost apex medical institutions, providing state-of-the-art emergency trauma services. Dial 112 for rapid police dispatch."
+                      }
+              ]
+      },
+
+      delhi: {
+              "id": "delhi",
+              "name": "Delhi",
+              "region": "North India",
+              "category": "Historical Capital & Heritage",
+              "heroTag": "Capital Safety",
+              "officialTourismBoard": {
+                      "name": "Delhi Tourism and Transportation Development Corporation (DTTDC)",
+                      "url": "https://www.delhitourism.gov.in/",
+                      "verificationStatus": "Official State Portal",
+                      "lastVerified": "October 2026"
+              },
+              "policeContact": {
+                      "name": "Delhi Police Tourist Help Unit",
+                      "location": "New Delhi Railway Station / Paharganj Kiosk, New Delhi",
+                      "phone": "+91 11 2336 4444",
+                      "telUri": "tel:+911123364444",
+                      "verificationStatus": "Verified Civic Contact",
+                      "lastVerified": "October 2026"
+              },
+              "medicalFacility": {
+                      "name": "All India Institute of Medical Sciences (AIIMS) New Delhi",
+                      "location": "Ansari Nagar East, Sri Aurobindo Marg, New Delhi",
+                      "facilityType": "Premier National Apex Government Multi-Specialty Hospital & Level-1 Trauma Centre",
+                      "phone": "+91 11 2658 8500",
+                      "telUri": "tel:+911126588500",
+                      "source": "Ministry of Health and Family Welfare, Government of India",
+                      "verificationStatus": "Verified Public Facility",
+                      "lastVerified": "October 2026",
+                      "mapQuery": "AIIMS Hospital, Ansari Nagar, New Delhi"
+              },
+              "guidance": [
+                      {
+                              "category": "Transit Safety & Metro Systems",
+                              "title": "Delhi Metro Network & Women's Coaches",
+                              "detail": "The Delhi Metro is the safest, most efficient urban transit system in the capital. The first coach in moving direction on every train is reserved exclusively for women commuters."
+                      },
+                      {
+                              "category": "Transport Safety & Authorized Cabs",
+                              "title": "Prepaid Taxi Booths & App Verification",
+                              "detail": "At airports and railway stations, use official Delhi Traffic Police prepaid taxi booths or authorized app-based cabs. Decline unsolicited offers from informal airport touts."
+                      },
+                      {
+                              "category": "Crowded Bazaars & Personal Belongings",
+                              "title": "Market Vigilance in Historic Precincts",
+                              "detail": "In high-density historic markets like Chandni Chowk and Sadar Bazaar, carry bags in front, avoid displaying large cash amounts, and keep smartphones secured."
+                      },
+                      {
+                              "category": "Tourist Police Kiosks & Assistance",
+                              "title": "Dedicated Tourist Police Points",
+                              "detail": "Specialized Delhi Tourist Police kiosks are positioned at India Gate, Red Fort, Qutub Minar, and Paharganj to verify guides and provide assistance in multiple languages."
+                      },
+                      {
+                              "category": "Weather & Air Quality Planning",
+                              "title": "Summer Heat & Winter Morning Fog",
+                              "detail": "Summer (May-June) requires sun protection and continuous hydration. Winter (December-January) brings morning fog; monitor transit schedules and air quality indexes."
+                      },
+                      {
+                              "category": "Emergency Infrastructure",
+                              "title": "AIIMS & Safdarjung Apex Healthcare",
+                              "detail": "AIIMS New Delhi and Safdarjung Hospital provide premier 24x7 level-1 emergency and trauma services in South Delhi. Dial 112 for unified emergency response."
+                      }
+              ]
+      },
+
+      dehradun: {
+              "id": "dehradun",
+              "name": "Dehradun",
+              "region": "North India",
+              "category": "Foothills & Himalayan Gateway",
+              "heroTag": "Valley Safety",
+              "officialTourismBoard": {
+                      "name": "Uttarakhand Tourism Development Board (UTDB)",
+                      "url": "https://uttarakhandtourism.gov.in/",
+                      "verificationStatus": "Official State Portal",
+                      "lastVerified": "October 2026"
+              },
+              "policeContact": {
+                      "name": "Dehradun Tourist Assistance Desk",
+                      "location": "Dalanwala Police Station, Chander Nagar, Dehradun",
+                      "phone": "+91 135 271 6200",
+                      "telUri": "tel:+911352716200",
+                      "verificationStatus": "Verified Civic Contact",
+                      "lastVerified": "October 2026"
+              },
+              "medicalFacility": {
+                      "name": "Government Doon Medical College Hospital",
+                      "location": "Patel Nagar, Dehradun, Uttarakhand",
+                      "facilityType": "Premier District Multi-Specialty Government Hospital & 24x7 Emergency Trauma Unit",
+                      "phone": "+91 135 271 6000",
+                      "telUri": "tel:+911352716000",
+                      "source": "Department of Medical Health & Family Welfare, Uttarakhand",
+                      "verificationStatus": "Verified Public Facility",
+                      "lastVerified": "October 2026",
+                      "mapQuery": "Doon Hospital, Patel Nagar, Dehradun, Uttarakhand"
+              },
+              "guidance": [
+                      {
+                              "category": "River Cave & Stream Safety",
+                              "title": "Robber's Cave Flash Surge Precautions",
+                              "detail": "At Robber's Cave (Guchhupani), wear non-slip river footwear. During monsoon rains, water levels inside the narrow canyon can rise rapidly; adhere strictly to lifeguard whistles."
+                      },
+                      {
+                              "category": "Foothill & Mountain Road Transit",
+                              "title": "Hill Driving Discipline on Mussoorie Highway",
+                              "detail": "The winding mountain ascent toward Mussoorie and Dhanaulti has blind turns and narrow shoulders. Sound horn at curves, yield to ascending vehicles, and avoid speeding."
+                      },
+                      {
+                              "category": "Forest & Sanctuary Protocols",
+                              "title": "Eco-Conscious Conduct in Green Corridors",
+                              "detail": "When cycling or strolling inside the Forest Research Institute or Malsi reserve, observe boundary signage, avoid littering, and dispose of waste in designated municipal bins."
+                      },
+                      {
+                              "category": "Monsoon Landslide Awareness",
+                              "title": "Rainy Season Transit Bulletins",
+                              "detail": "Heavy rains (July-August) can cause minor hillside debris along valley roads. Check Uttarakhand State Disaster Management Authority (USDMA) alerts before traveling."
+                      },
+                      {
+                              "category": "Environmental & Plastic Guidelines",
+                              "title": "Anti-Littering Enforcement in the Valley",
+                              "detail": "Uttarakhand enforces strict environmental penalties for littering in eco-fragile foothills. Carry refillable water containers and respect local waste guidelines."
+                      },
+                      {
+                              "category": "Emergency Infrastructure",
+                              "title": "Government Doon Medical College Emergency Care",
+                              "detail": "Government Doon Medical College Hospital provides round-the-clock emergency medical and trauma facilities in central Dehradun. Dial 112 for immediate assistance."
+                      }
+              ]
       }
     },
 

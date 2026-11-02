@@ -20,6 +20,7 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="destination.css">
+  <script src="data/discovery.js" defer></script>
   <script src="destination.js" defer></script>
 </head>
 
@@ -49,7 +50,9 @@
       <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
         <a class="nav-link" href="index.html#home">Home</a>
         <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="planner.html">Trip Planner</a>
         <a class="nav-link" href="safety.html">Safety Center</a>
+        <a class="nav-link" href="wishlist.html" id="nav-wishlist-link">Wishlist <span class="nav-badge" id="nav-wishlist-count" hidden>0</span></a>
         <a class="nav-cta" href="index.html#destination-search">
           Find a destination
           <span aria-hidden="true">↗</span>
@@ -121,6 +124,18 @@
           <div class="detail-hero-badges">
             <span class="detail-pill detail-pill-category" id="detail-category-badge">Category</span>
             <span class="detail-pill detail-pill-region" id="detail-region-badge">Region</span>
+            <button
+              type="button"
+              id="detail-wishlist-btn"
+              class="button-detail-wishlist"
+              aria-pressed="false"
+              aria-label="Save destination to wishlist"
+            >
+              <svg class="heart-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span id="detail-wishlist-text">Save to Wishlist</span>
+            </button>
           </div>
 
           <h1 id="detail-title" class="detail-hero-title">Destination Name</h1>
@@ -212,6 +227,13 @@
                   href="safety.html"
                 >
                   🛡️ Destination Safety &amp; Medical Guide ↗
+                </a>
+                <a
+                  id="sidebar-planner-link"
+                  class="button button-outline-dark button-planner-link"
+                  href="planner.html"
+                >
+                  ✨ Plan Custom Itinerary ↗
                 </a>
               </div>
             </div>
@@ -344,16 +366,36 @@
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Continue Exploring</p>
-              <h2 id="related-title">You might also love</h2>
+              <p class="eyebrow">Continue Your Journey</p>
+              <h2 id="related-title">Explore Beyond <span id="related-dest-name">Destination</span></h2>
             </div>
             <p class="section-description">
-              Other handpicked journeys that pair well with this trip.
+              Handpicked destinations and personalized recommendations tailored to your travel vibe.
             </p>
+          </div>
+
+          <div class="recommendation-filters" id="recommendation-filters" role="group" aria-label="Recommendation interest filters">
+            <button type="button" class="rec-filter-btn is-active" data-interest="all">✨ All Recommendations</button>
+            <button type="button" class="rec-filter-btn" data-interest="mountains">🏔️ Mountains</button>
+            <button type="button" class="rec-filter-btn" data-interest="beaches">🏖️ Beaches</button>
+            <button type="button" class="rec-filter-btn" data-interest="culture">🏛️ Culture &amp; Heritage</button>
+            <button type="button" class="rec-filter-btn" data-interest="nature">🌿 Nature &amp; Wildlife</button>
+            <button type="button" class="rec-filter-btn" data-interest="food">🍲 Food &amp; Dining</button>
+            <button type="button" class="rec-filter-btn" data-interest="peaceful">🧘 Peaceful Retreats</button>
           </div>
 
           <div class="destination-grid" id="related-destinations-grid">
             <!-- Injected safely via JS -->
+          </div>
+
+          <div class="recently-viewed-section" id="recently-viewed-container" hidden>
+            <div class="recently-viewed-header">
+              <h3 class="recently-viewed-title">Recently Viewed Journeys</h3>
+              <button type="button" class="btn-clear-recents" id="btn-clear-recents">Clear History</button>
+            </div>
+            <div class="recent-cards-grid" id="recently-viewed-grid">
+              <!-- Injected safely via JS -->
+            </div>
           </div>
 
           <div class="detail-bottom-cta">

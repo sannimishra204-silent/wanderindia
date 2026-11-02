@@ -33,13 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleMenu = () => {
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-      primaryNav.classList.toggle("open", !isExpanded);
+      menuToggle.setAttribute(
+        "aria-label",
+        isExpanded ? "Open navigation menu" : "Close navigation menu"
+      );
+      primaryNav.classList.toggle("is-open", !isExpanded);
       document.body.classList.toggle("menu-open", !isExpanded);
     };
 
     const closeMenu = () => {
       menuToggle.setAttribute("aria-expanded", "false");
-      primaryNav.classList.remove("open");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+      primaryNav.classList.remove("is-open");
       document.body.classList.remove("menu-open");
     };
 
@@ -50,7 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && primaryNav.classList.contains("open")) {
+      if (e.key === "Escape" && primaryNav.classList.contains("is-open")) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!primaryNav.contains(e.target) && !menuToggle.contains(e.target)) {
         closeMenu();
       }
     });
